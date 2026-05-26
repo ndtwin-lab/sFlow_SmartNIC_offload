@@ -1,0 +1,1017 @@
+{
+    "generic": {
+        "tables_info": {
+            "t_do_frecirculate": {
+                "max_entries": 1, 
+                "allowed_actions": [
+                    "fdo_recirculate"
+                ], 
+                "name": "t_do_frecirculate"
+            }, 
+            "no_record_flow1": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "num_decrement", 
+                    "drop_act"
+                ], 
+                "name": "no_record_flow1"
+            }, 
+            "no_record_flow2": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "num_decrement", 
+                    "drop_act"
+                ], 
+                "name": "no_record_flow2"
+            }, 
+            "record_flow1": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "record_flow1", 
+                    "stop_flow1"
+                ], 
+                "name": "record_flow1"
+            }, 
+            "record_flow2": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "record_flow2", 
+                    "stop_flow2"
+                ], 
+                "name": "record_flow2"
+            }, 
+            "t_do_recirculate": {
+                "max_entries": 1, 
+                "allowed_actions": [
+                    "do_recirculate"
+                ], 
+                "name": "t_do_recirculate"
+            }, 
+            "in_tbl2": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "need_recirculate", 
+                    "stop_recirculate2", 
+                    "stop_recirculate1"
+                ], 
+                "name": "in_tbl2"
+            }, 
+            "nor_tbl": {
+                "max_entries": 200, 
+                "allowed_actions": [
+                    "forward", 
+                    "drop_act"
+                ], 
+                "name": "nor_tbl"
+            }
+        }, 
+        "action_info": {
+            "num_decrement": {
+                "name": "num_decrement", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "need_recirculate": {
+                "name": "need_recirculate", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "do_recirculate": {
+                "name": "do_recirculate", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "stop_flow2": {
+                "name": "stop_flow2", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "drop_act": {
+                "name": "drop_act", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "stop_recirculate2": {
+                "name": "stop_recirculate2", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "stop_recirculate1": {
+                "name": "stop_recirculate1", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "record_flow2": {
+                "name": "record_flow2", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "stop_flow1": {
+                "name": "stop_flow1", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "record_flow1": {
+                "name": "record_flow1", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "forward": {
+                "name": "forward", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }, 
+            "fdo_recirculate": {
+                "name": "fdo_recirculate", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }
+            }
+        }
+    }, 
+    "vendor": {
+        "register_info": {}, 
+        "backend_source_info": {
+            "date": "2026/05/26 08:49:51", 
+            "source_files": "sFlow-offload.yml"
+        }, 
+        "counters_info": {}, 
+        "meter_info": {}, 
+        "frontend_source_info": {
+            "date": "2026/05/26 08:49:50", 
+            "source_files": [
+                "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+            ]
+        }, 
+        "tables_info": {
+            "t_do_frecirculate": {
+                "name": "t_do_frecirculate", 
+                "constant_default": false, 
+                "matches": [], 
+                "allowed_actions": [
+                    "fdo_recirculate"
+                ], 
+                "id": 0, 
+                "max_entries": 1, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_0_t_do_frecirculate", 
+                "data_size": 16
+            }, 
+            "no_record_flow1": {
+                "name": "no_record_flow1", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "num_metadata.cur_num", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 8, 
+                                "fldbitoff": 0, 
+                                "name": "cur_num", 
+                                "lmbitoff": 3608
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "num_decrement", 
+                    "drop_act"
+                ], 
+                "id": 1, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_1_no_record_flow1", 
+                "data_size": 16
+            }, 
+            "no_record_flow2": {
+                "name": "no_record_flow2", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "num_metadata.cur_num", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 8, 
+                                "fldbitoff": 0, 
+                                "name": "cur_num", 
+                                "lmbitoff": 3608
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "num_decrement", 
+                    "drop_act"
+                ], 
+                "id": 2, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_2_no_record_flow2", 
+                "data_size": 16
+            }, 
+            "record_flow1": {
+                "name": "record_flow1", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "num_metadata.cur_num", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 8, 
+                                "fldbitoff": 0, 
+                                "name": "cur_num", 
+                                "lmbitoff": 3608
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "record_flow1", 
+                    "stop_flow1"
+                ], 
+                "id": 6, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_6_record_flow1", 
+                "data_size": 16
+            }, 
+            "record_flow2": {
+                "name": "record_flow2", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "num_metadata.cur_num", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 8, 
+                                "fldbitoff": 0, 
+                                "name": "cur_num", 
+                                "lmbitoff": 3608
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "record_flow2", 
+                    "stop_flow2"
+                ], 
+                "id": 4, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_4_record_flow2", 
+                "data_size": 16
+            }, 
+            "t_do_recirculate": {
+                "name": "t_do_recirculate", 
+                "constant_default": false, 
+                "matches": [], 
+                "allowed_actions": [
+                    "do_recirculate"
+                ], 
+                "id": 5, 
+                "max_entries": 1, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_5_t_do_recirculate", 
+                "data_size": 16
+            }, 
+            "in_tbl2": {
+                "name": "in_tbl2", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "num_metadata.cur_num", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 8, 
+                                "fldbitoff": 0, 
+                                "name": "cur_num", 
+                                "lmbitoff": 3608
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "need_recirculate", 
+                    "stop_recirculate2", 
+                    "stop_recirculate1"
+                ], 
+                "id": 3, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_3_in_tbl2", 
+                "data_size": 16
+            }, 
+            "nor_tbl": {
+                "name": "nor_tbl", 
+                "constant_default": false, 
+                "matches": [
+                    {
+                        "field": "standard_metadata.ingress_port", 
+                        "type": "exact", 
+                        "class": "field", 
+                        "lm_layout": [
+                            {
+                                "width": 10, 
+                                "fldbitoff": 0, 
+                                "name": "ingress_port", 
+                                "lmbitoff": 3574
+                            }
+                        ]
+                    }
+                ], 
+                "allowed_actions": [
+                    "forward", 
+                    "drop_act"
+                ], 
+                "id": 7, 
+                "max_entries": 200, 
+                "data_shift": 4, 
+                "rtsym": "_pif_actiondata_table_7_nor_tbl", 
+                "data_size": 16
+            }
+        }, 
+        "action_info": {
+            "num_decrement": {
+                "timeoutno_field": "", 
+                "name": "num_decrement", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "espec", 
+                        "name": "espec", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 2, 
+                        "pad_type": "uint16_t", 
+                        "split": false, 
+                        "size": 16
+                    }, 
+                    {
+                        "pad_cnt": 2, 
+                        "pad_type": "uint8_t", 
+                        "actiondata": null, 
+                        "name": "__pif_padding", 
+                        "split": false, 
+                        "doc": "padding", 
+                        "pad_szbytes": 1, 
+                        "size": 8
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 0, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "need_recirculate": {
+                "timeoutno_field": "", 
+                "name": "need_recirculate", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "espec", 
+                        "name": "espec", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 2, 
+                        "pad_type": "uint16_t", 
+                        "split": false, 
+                        "size": 16
+                    }, 
+                    {
+                        "pad_cnt": 2, 
+                        "pad_type": "uint8_t", 
+                        "actiondata": null, 
+                        "name": "__pif_padding", 
+                        "split": false, 
+                        "doc": "padding", 
+                        "pad_szbytes": 1, 
+                        "size": 8
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 1, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "do_recirculate": {
+                "timeoutno_field": "", 
+                "name": "do_recirculate", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 2, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "stop_flow2": {
+                "timeoutno_field": "", 
+                "name": "stop_flow2", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 10, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "drop_act": {
+                "timeoutno_field": "", 
+                "name": "drop_act", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 3, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "stop_recirculate2": {
+                "timeoutno_field": "", 
+                "name": "stop_recirculate2", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 4, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "stop_recirculate1": {
+                "timeoutno_field": "", 
+                "name": "stop_recirculate1", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 5, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "record_flow2": {
+                "timeoutno_field": "", 
+                "name": "record_flow2", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "espec", 
+                        "name": "espec", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 2, 
+                        "pad_type": "uint16_t", 
+                        "split": false, 
+                        "size": 16
+                    }, 
+                    {
+                        "pad_cnt": 2, 
+                        "pad_type": "uint8_t", 
+                        "actiondata": null, 
+                        "name": "__pif_padding", 
+                        "split": false, 
+                        "doc": "padding", 
+                        "pad_szbytes": 1, 
+                        "size": 8
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 6, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "stop_flow1": {
+                "timeoutno_field": "", 
+                "name": "stop_flow1", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 7, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "record_flow1": {
+                "timeoutno_field": "", 
+                "name": "record_flow1", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "espec", 
+                        "name": "espec", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 2, 
+                        "pad_type": "uint16_t", 
+                        "split": false, 
+                        "size": 16
+                    }, 
+                    {
+                        "pad_cnt": 2, 
+                        "pad_type": "uint8_t", 
+                        "actiondata": null, 
+                        "name": "__pif_padding", 
+                        "split": false, 
+                        "doc": "padding", 
+                        "pad_szbytes": 1, 
+                        "size": 8
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 8, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "forward": {
+                "timeoutno_field": "", 
+                "name": "forward", 
+                "action_data": {
+                    "espec": {
+                        "size": 16
+                    }, 
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "espec", 
+                        "name": "espec", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 2, 
+                        "pad_type": "uint16_t", 
+                        "split": false, 
+                        "size": 16
+                    }, 
+                    {
+                        "pad_cnt": 2, 
+                        "pad_type": "uint8_t", 
+                        "actiondata": null, 
+                        "name": "__pif_padding", 
+                        "split": false, 
+                        "doc": "padding", 
+                        "pad_szbytes": 1, 
+                        "size": 8
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 9, 
+                "tableno_field": "__pif_table_no"
+            }, 
+            "fdo_recirculate": {
+                "timeoutno_field": "", 
+                "name": "fdo_recirculate", 
+                "action_data": {
+                    "__pif_rule_no": {
+                        "size": 32
+                    }, 
+                    "__pif_table_no": {
+                        "size": 32
+                    }
+                }, 
+                "ruleno_field": "__pif_rule_no", 
+                "action_data_packed": [
+                    {
+                        "actiondata": "__pif_rule_no", 
+                        "name": "__pif_rule_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }, 
+                    {
+                        "actiondata": "__pif_table_no", 
+                        "name": "__pif_table_no", 
+                        "pad_cnt": 1, 
+                        "doc": null, 
+                        "pad_szbytes": 4, 
+                        "pad_type": "uint32_t", 
+                        "split": false, 
+                        "size": 32
+                    }
+                ], 
+                "noeffect": false, 
+                "id": 11, 
+                "tableno_field": "__pif_table_no"
+            }
+        }, 
+        "multicast": {
+            "table_rtsym": "_pif_mcast_table", 
+            "group_count": 0, 
+            "group_size": 16
+        }, 
+        "custom_errors": {}, 
+        "build_uuid": [
+            16842752, 
+            2408644865, 
+            1491014129, 
+            3686522672
+        ], 
+        "digests_info": {}, 
+        "parser_value_set_info": {}
+    }
+}

@@ -1,0 +1,239 @@
+.%scope file "C:\NFP_SDK_6.1.0-preview\p4\components\nfp_pif\me\apps\pif_app_nfd\include\config.h"
+.%scope function multiply_24x8 _multiply_24x8 "C:\NFP_SDK_6.1.0-preview\p4\components\nfp_pif\me\lib\pif\include\pif_common.h" 62 77
+.%arg x 0 x_294_V$727
+.%arg y 0 y_294_V$728
+.%var result 0 result_294 LIX
+.%scope end
+.%var BLM_NBI8_BLQ0_EMU_QD_BASE 1 _BLM_NBI8_BLQ0_EMU_QD_BASE SEX
+.%var BLM_NBI8_BLQ0_EMU_Q_BASE 3 _BLM_NBI8_BLQ0_EMU_Q_BASE SEX
+.%var BLM_NBI8_BLQ1_EMU_QD_BASE 4 _BLM_NBI8_BLQ1_EMU_QD_BASE SEX
+.%var BLM_NBI8_BLQ1_EMU_Q_BASE 5 _BLM_NBI8_BLQ1_EMU_Q_BASE SEX
+.%var BLM_NBI8_BLQ2_EMU_QD_BASE 6 _BLM_NBI8_BLQ2_EMU_QD_BASE SEX
+.%var BLM_NBI8_BLQ2_EMU_Q_BASE 7 _BLM_NBI8_BLQ2_EMU_Q_BASE SEX
+.%var BLM_NBI8_BLQ3_EMU_QD_BASE 8 _BLM_NBI8_BLQ3_EMU_QD_BASE SEX
+.%var BLM_NBI8_BLQ3_EMU_Q_BASE 9 _BLM_NBI8_BLQ3_EMU_Q_BASE SEX
+.%var BLM_NBI8_BLQ0_EMU_EMEM0_BUFS_BASE 10 _BLM_NBI8_BLQ0_EMU_EMEM0_BUFS_BASE SEX
+.%var BLM_NBI8_BLQ0_BDSRAM_EMEM0_BUFS_BASE 11 _BLM_NBI8_BLQ0_BDSRAM_EMEM0_BUFS_BASE SEX
+.%var cglobal_semaphores 12 _cglobal_semaphores SEX
+.%var _counter_data 13 __counter_data SEX
+.%scope function pif_plugin_hdr_get_sflow_counter _pif_plugin_hdr_get_sflow_counter "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\out\callbackapi\pif_plugin_sflow_counter.h" 394 399
+.%arg extracted_headers 15 extracted_headers_438_V$72b
+.%var _ctl 16 _ctl_438 LIX
+.%scope end
+.%scope function pif_plugin_hdr_get_sflow_counter2 _pif_plugin_hdr_get_sflow_counter2 "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\out\callbackapi\pif_plugin_sflow_counter2.h" 410 415
+.%arg extracted_headers 15 extracted_headers_451_V$72e
+.%var _ctl 16 _ctl_451 LIX
+.%scope end
+.%scope function pif_plugin_hdr_get_sflow_header _pif_plugin_hdr_get_sflow_header "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\out\callbackapi\pif_plugin_sflow_header.h" 108 113
+.%arg extracted_headers 15 extracted_headers_464_V$731
+.%var _ctl 16 _ctl_464 LIX
+.%scope end
+.%scope function cwrite_data_to_mem _cwrite_data_to_mem "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 38 46
+.%arg index 18 index_718_V$734
+.%arg counter 19 counter_718_V$735
+.%var _pif_hdrptr 20 _pif_hdrptr_718 LIX
+.%scope block 42 45
+.%var _pif_wreg 14 _pif_wreg_719 LIW
+.%scope end
+.%scope end
+.%scope function cread_and_check _cread_and_check "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 48 66
+.%arg index 18 index_720_V$740
+.%arg counter 19 counter_720_V$741
+.%var old_counter 14 old_counter_720 LIX
+.%var key 14 key_720 LIR
+.%var _pif_hdrptr 20 _pif_hdrptr_720 LIX
+.%scope end
+.%scope function ccollision_handler _ccollision_handler "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 69 74
+.%arg index 18 index_723_V$756
+.%scope end
+.%scope function cstoring_data _cstoring_data "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 76 132
+.%arg _pif_index 18 _pif_index_724_V$757
+.%arg counter 19 counter_724_V$758
+.%var _pif_hdrptr 20 _pif_hdrptr_724 LIX
+.%var xfer 0 xfer_724 LIX
+.%var cnt 21 cnt_724 LIX
+.%scope end
+.%scope function hash_function2 _hash_function2 "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 136 154
+.%arg cnt 22 cnt_735_V$75c
+.%var val 23 val_735 LIX
+.%var hash 0 hash_735 LIX
+.%var i 0 i_735 LIX
+.%scope end
+.%scope function pif_plugin_update_counter2 _pif_plugin_update_counter2 "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 157 182
+.%arg headers 15 headers_737_V$761
+.%arg data 24 data_737_V$762
+.%var sflow_counter2 25 sflow_counter2_737 LIX
+.%var sflow_header 27 sflow_header_737 LIX
+.%var _pif_index 0 _pif_index_737 LIX
+.%var counter 14 counter_737 LIX
+.%scope end
+.%scope function pif_plugin_update_counter _pif_plugin_update_counter "C:\Users\Alen Chen\NFP_SDK\sFlow-offload\store_counter_sample.c" 184 210
+.%arg headers 15 headers_738_V$770
+.%arg data 24 data_738_V$771
+.%var sflow_counter 29 sflow_counter_738 LIX
+.%var sflow_header 27 sflow_header_738 LIX
+.%var _pif_index 0 _pif_index_738 LIX
+.%var counter 14 counter_738 LIX
+.%scope end
+.%type U4
+.%type A16 2
+.%type U1
+.%type A32768 2
+.%type A16 2
+.%type A2048 2
+.%type A16 2
+.%type A2048 2
+.%type A16 2
+.%type A2048 2
+.%type A41943040 2
+.%type A10485760 2
+.%type A4096 0
+.%type A32768 14
+.%type S32 counter_data{
+agent_ip 0:0:32 0;
+if_idx 4:0:32 0;
+in_octets_0 8:0:32 0;
+in_octets_1 12:0:32 0;
+out_octets_0 16:0:32 0;
+out_octets_1 20:0:32 0;
+if_speed_0 24:0:32 0;
+if_speed_1 28:0:32 0;
+}
+.%type P6 0
+.%type P6 17
+.%type S8 pif_parrep_ctldata{
+valid 0:31:1 0;
+t0_valid 0:30:1 0;
+t0_dirty 0:29:1 0;
+t0_orig_len 0:28:1 0;
+t1_valid 0:27:1 0;
+t1_dirty 0:26:1 0;
+t1_orig_len 0:25:1 0;
+t2_valid 0:24:1 0;
+t2_dirty 0:23:1 0;
+t2_orig_len 0:22:1 0;
+t3_valid 0:21:1 0;
+t3_dirty 0:20:1 0;
+t3_orig_len 0:19:1 0;
+t4_valid 0:18:1 0;
+t4_dirty 0:17:1 0;
+t4_orig_len 0:16:1 0;
+t5_valid 0:15:1 0;
+t5_type 0:14:1 0;
+t5_dirty 0:13:1 0;
+t5_orig_len 0:5:8 0;
+_padding_0 0:0:5 0;
+t6_valid 4:31:1 0;
+t6_type 4:30:1 0;
+t6_dirty 4:29:1 0;
+t6_orig_len 4:21:8 0;
+}
+.%type P2 0
+.%type P3 14
+.%type P3 0
+.%type U2
+.%type P2 14
+.%type P2 21
+.%type P2 0
+.%type P6 26
+.%type S176 pif_plugin_sflow_counter2{
+sample_type 0:0:32 0;
+sample_length 4:0:32 0;
+seqnum 8:0:32 0;
+id_index 12:0:32 0;
+counter_records 16:0:32 0;
+eth_foramt 20:0:32 0;
+eth_data_len 24:0:32 0;
+alig_err 28:0:32 0;
+fcs_err 32:0:32 0;
+single_collision 36:0:32 0;
+multi_collision 40:0:32 0;
+sqe_err 44:0:32 0;
+deffered 48:0:32 0;
+late_collision 52:0:32 0;
+excessive_collision 56:0:32 0;
+imt_err 60:0:32 0;
+carrier_err 64:0:32 0;
+frame_err 68:0:32 0;
+imr_err 72:0:32 0;
+symbol_err 76:0:32 0;
+g_format 80:0:32 0;
+g_data_len 84:0:32 0;
+g_if 88:0:32 0;
+g_type 92:0:32 0;
+g_speed 96:0:32 0;
+__g_speed_1 100:0:32 0;
+g_if_direction 104:0:32 0;
+g_if_status 108:0:32 0;
+g_in_octets 112:0:32 0;
+__g_in_octets_1 116:0:32 0;
+g_in_pkts 120:0:32 0;
+g_in_multicast_pkts 124:0:32 0;
+g_in_broadcast_pkts 128:0:32 0;
+g_in_discards 132:0:32 0;
+g_in_errors 136:0:32 0;
+g_in_unknown_protos 140:0:32 0;
+g_out_octets 144:0:32 0;
+__g_out_octets_1 148:0:32 0;
+g_out_pkts 152:0:32 0;
+g_out_multicast_pkts 156:0:32 0;
+g_out_broadcast_pkts 160:0:32 0;
+g_out_discards 164:0:32 0;
+g_out_errors 168:0:32 0;
+g_promiscuous_mode 172:0:32 0;
+}
+.%type P6 28
+.%type S28 pif_plugin_sflow_header{
+version 0:0:32 0;
+agent_type 4:0:32 0;
+agent_ip 8:0:32 0;
+agent_id 12:0:32 0;
+seq_num 16:0:32 0;
+uptime 20:0:32 0;
+num_samples 24:0:32 0;
+}
+.%type P6 30
+.%type S168 pif_plugin_sflow_counter{
+seqnum 0:0:32 0;
+id_index 4:0:32 0;
+counter_records 8:0:32 0;
+eth_foramt 12:0:32 0;
+eth_data_len 16:0:32 0;
+alig_err 20:0:32 0;
+fcs_err 24:0:32 0;
+single_collision 28:0:32 0;
+multi_collision 32:0:32 0;
+sqe_err 36:0:32 0;
+deffered 40:0:32 0;
+late_collision 44:0:32 0;
+excessive_collision 48:0:32 0;
+imt_err 52:0:32 0;
+carrier_err 56:0:32 0;
+frame_err 60:0:32 0;
+imr_err 64:0:32 0;
+symbol_err 68:0:32 0;
+g_format 72:0:32 0;
+g_data_len 76:0:32 0;
+g_if 80:0:32 0;
+g_type 84:0:32 0;
+g_speed 88:0:32 0;
+__g_speed_1 92:0:32 0;
+g_if_direction 96:0:32 0;
+g_if_status 100:0:32 0;
+g_in_octets 104:0:32 0;
+__g_in_octets_1 108:0:32 0;
+g_in_pkts 112:0:32 0;
+g_in_multicast_pkts 116:0:32 0;
+g_in_broadcast_pkts 120:0:32 0;
+g_in_discards 124:0:32 0;
+g_in_errors 128:0:32 0;
+g_in_unknown_protos 132:0:32 0;
+g_out_octets 136:0:32 0;
+__g_out_octets_1 140:0:32 0;
+g_out_pkts 144:0:32 0;
+g_out_multicast_pkts 148:0:32 0;
+g_out_broadcast_pkts 152:0:32 0;
+g_out_discards 156:0:32 0;
+g_out_errors 160:0:32 0;
+g_promiscuous_mode 164:0:32 0;
+}

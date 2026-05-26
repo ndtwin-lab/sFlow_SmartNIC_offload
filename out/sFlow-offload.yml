@@ -1,0 +1,733 @@
+##########################################
+# Header instance definitions            #
+##########################################
+
+"udp" :
+    type : header
+    fields : 
+        - "sport" : 16
+        - "dport" : 16
+        - "len" : 16
+        - "checksum" : 16
+
+"sflow_sample" :
+    type : header
+    fields : 
+        - "in_port" : 16
+        - "out_port" : 16
+        - "sample_rate" : 32
+        - "eth_type" : 32
+        - "frame_length" : 16
+        - "protocol" : 16
+        - "srcIP" : 32
+        - "dstIP" : 32
+        - "ip_flag" : 16
+        - "tcp_flag" : 16
+        - "srcPort" : 16
+        - "dstPort" : 16
+
+"sflow_sample2" :
+    type : header
+    fields : 
+        - "sample_type" : 32
+        - "sample_length" : 32
+        - "in_port" : 16
+        - "out_port" : 16
+        - "sample_rate" : 32
+        - "eth_type" : 32
+        - "frame_length" : 16
+        - "protocol" : 16
+        - "srcIP" : 32
+        - "dstIP" : 32
+        - "ip_flag" : 16
+        - "tcp_flag" : 16
+        - "srcPort" : 16
+        - "dstPort" : 16
+
+"sflow_sample_header" :
+    type : header
+    fields : 
+        - "sample_type" : 32
+        - "sample_length" : 32
+
+"ipv4" :
+    type : header
+    fields : 
+        - "version" : 4
+        - "ihl" : 4
+        - "diffserv" : 8
+        - "totalLen" : 16
+        - "identification" : 16
+        - "flags" : 3
+        - "fragOffset" : 13
+        - "ttl" : 8
+        - "protocol" : 8
+        - "hdrChecksum" : 16
+        - "srcAddr" : 32
+        - "dstAddr" : 32
+
+"eth" :
+    type : header
+    fields : 
+        - "dst" : 48
+        - "src" : 48
+        - "etype" : 16
+
+"sflow_counter" :
+    type : header
+    fields : 
+        - "seqnum" : 32
+        - "id_index" : 32
+        - "counter_records" : 32
+        - "eth_foramt" : 32
+        - "eth_data_len" : 32
+        - "alig_err" : 32
+        - "fcs_err" : 32
+        - "single_collision" : 32
+        - "multi_collision" : 32
+        - "sqe_err" : 32
+        - "deffered" : 32
+        - "late_collision" : 32
+        - "excessive_collision" : 32
+        - "imt_err" : 32
+        - "carrier_err" : 32
+        - "frame_err" : 32
+        - "imr_err" : 32
+        - "symbol_err" : 32
+        - "g_format" : 32
+        - "g_data_len" : 32
+        - "g_if" : 32
+        - "g_type" : 32
+        - "g_speed" : 64
+        - "g_if_direction" : 32
+        - "g_if_status" : 32
+        - "g_in_octets" : 64
+        - "g_in_pkts" : 32
+        - "g_in_multicast_pkts" : 32
+        - "g_in_broadcast_pkts" : 32
+        - "g_in_discards" : 32
+        - "g_in_errors" : 32
+        - "g_in_unknown_protos" : 32
+        - "g_out_octets" : 64
+        - "g_out_pkts" : 32
+        - "g_out_multicast_pkts" : 32
+        - "g_out_broadcast_pkts" : 32
+        - "g_out_discards" : 32
+        - "g_out_errors" : 32
+        - "g_promiscuous_mode" : 32
+
+"sflow_counter2" :
+    type : header
+    fields : 
+        - "sample_type" : 32
+        - "sample_length" : 32
+        - "seqnum" : 32
+        - "id_index" : 32
+        - "counter_records" : 32
+        - "eth_foramt" : 32
+        - "eth_data_len" : 32
+        - "alig_err" : 32
+        - "fcs_err" : 32
+        - "single_collision" : 32
+        - "multi_collision" : 32
+        - "sqe_err" : 32
+        - "deffered" : 32
+        - "late_collision" : 32
+        - "excessive_collision" : 32
+        - "imt_err" : 32
+        - "carrier_err" : 32
+        - "frame_err" : 32
+        - "imr_err" : 32
+        - "symbol_err" : 32
+        - "g_format" : 32
+        - "g_data_len" : 32
+        - "g_if" : 32
+        - "g_type" : 32
+        - "g_speed" : 64
+        - "g_if_direction" : 32
+        - "g_if_status" : 32
+        - "g_in_octets" : 64
+        - "g_in_pkts" : 32
+        - "g_in_multicast_pkts" : 32
+        - "g_in_broadcast_pkts" : 32
+        - "g_in_discards" : 32
+        - "g_in_errors" : 32
+        - "g_in_unknown_protos" : 32
+        - "g_out_octets" : 64
+        - "g_out_pkts" : 32
+        - "g_out_multicast_pkts" : 32
+        - "g_out_broadcast_pkts" : 32
+        - "g_out_discards" : 32
+        - "g_out_errors" : 32
+        - "g_promiscuous_mode" : 32
+
+"sflow_header" :
+    type : header
+    fields : 
+        - "version" : 32
+        - "agent_type" : 32
+        - "agent_ip" : 32
+        - "agent_id" : 32
+        - "seq_num" : 32
+        - "uptime" : 32
+        - "num_samples" : 32
+
+"standard_metadata" :
+    type : metadata
+    fields : 
+        - "ingress_port" : 10
+        - "packet_length" : 14
+        - "egress_spec" : 16
+        - "egress_port" : 16
+        - "egress_instance" : 10
+        - "instance_type" : 4
+        - "clone_spec" : 32
+        - "parser_error_location" : 8
+        - "parser_status" : 3
+        - "_padding" : 7
+
+"recirculate_fl" :
+    type : metadata
+    fields : 
+        - "recirculate_count" : 8
+        - "fl" : 8
+
+"num_metadata" :
+    type : metadata
+    fields : 
+        - "cur_num" : 8
+
+##########################################
+# Field list definitions                 #
+##########################################
+
+"parse_next" :
+    type : field_list
+    fields :
+        -  "recirculate_fl.recirculate_count"
+        -  "recirculate_fl.fl"
+
+##########################################
+# Parse states                           #
+##########################################
+
+"start" :
+    type : parse_state
+    pragmas :
+        - "netro no_lookup_caching"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 405
+
+"eth_parse" :
+    type : parse_state
+    extracts :
+        - "eth"
+    select_value :
+        - "eth.etype"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 410
+
+"parse_ipv4" :
+    type : parse_state
+    extracts :
+        - "ipv4"
+    select_value :
+        - "ipv4.protocol"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 422
+
+"parse_udp" :
+    type : parse_state
+    extracts :
+        - "udp"
+    select_value :
+        - "udp.dport"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 434
+
+"parse_sflow_header" :
+    type : parse_state
+    sets :
+        - "num_metadata.cur_num" : "sflow_header.num_samples"
+    extracts :
+        - "sflow_header"
+    select_value :
+        - "num_metadata.cur_num"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 447
+
+"parse_sflow_sample_header" :
+    type : parse_state
+    extracts :
+        - "sflow_sample_header"
+    select_value :
+        - "sflow_sample_header.sample_type"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 459
+
+"parse_sflow_counter" :
+    type : parse_state
+    extracts :
+        - "sflow_counter"
+    select_value :
+        - "num_metadata.cur_num"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 470
+
+"parse_sflow_counter_2" :
+    type : parse_state
+    extracts :
+        - "sflow_counter2"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 481
+
+"parse_sflow_sample" :
+    type : parse_state
+    extracts :
+        - "sflow_sample"
+    select_value :
+        - "num_metadata.cur_num"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 487
+
+"parse_sflow_sample_2" :
+    type : parse_state
+    extracts :
+        - "sflow_sample2"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 498
+
+##########################################
+# Parser                                 #
+##########################################
+
+parser :
+    type : parser
+    format : dot
+    start_state : "start"
+    implementation : >-
+        digraph {
+            start -> eth_parse [value="default", mask="none", order="0"]
+            eth_parse -> parse_ipv4 [value="0x800", mask="none", order="0"]
+            eth_parse -> _condition_0 [value="default", mask="none", order="1"]
+            parse_ipv4 -> parse_udp [value="0x11", mask="none", order="0"]
+            parse_ipv4 -> _condition_0 [value="default", mask="none", order="1"]
+            parse_udp -> parse_sflow_header [value="0x18c7", mask="none", order="0"]
+            parse_udp -> _condition_0 [value="default", mask="none", order="1"]
+            parse_sflow_header -> _condition_0 [value="0x0", mask="none", order="0"]
+            parse_sflow_header -> parse_sflow_sample_header [value="default", mask="none", order="1"]
+            parse_sflow_sample_header -> parse_sflow_counter [value="0x2", mask="none", order="0"]
+            parse_sflow_sample_header -> parse_sflow_sample [value="0x5", mask="none", order="1"]
+            parse_sflow_sample_header -> _condition_0 [value="default", mask="none", order="2"]
+            parse_sflow_counter -> _condition_0 [value="0x1", mask="none", order="0"]
+            parse_sflow_counter -> parse_sflow_counter_2 [value="default", mask="none", order="1"]
+            parse_sflow_sample -> _condition_0 [value="0x1", mask="none", order="0"]
+            parse_sflow_sample -> parse_sflow_sample_2 [value="default", mask="none", order="1"]
+            parse_sflow_counter_2 -> _condition_0 [value="default", mask="none", order="0"]
+            parse_sflow_sample_2 -> _condition_0 [value="default", mask="none", order="0"]
+        }
+
+##########################################
+# External functions                     #
+##########################################
+
+"update_frame__0" :
+    name : "update_frame"
+    type : external_action
+
+"update_frame2__0" :
+    name : "update_frame2"
+    type : external_action
+
+"update_counter2__0" :
+    name : "update_counter2"
+    type : external_action
+
+"update_counter__0" :
+    name : "update_counter"
+    type : external_action
+
+##########################################
+# Action sets                            #
+##########################################
+
+"num_decrement" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 587
+    parameter_list :
+        - "espec" : 16
+    implementation : >-
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        modify_field(standard_metadata.egress_spec, espec);
+
+"fdo_recirculate" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 616
+    implementation : >-
+        remove_header(sflow_sample_header);
+        remove_header(sflow_sample);
+        remove_header(sflow_sample2);
+        recirculate(parse_next);
+
+"need_recirculate" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 558
+    parameter_list :
+        - "espec" : 16
+    implementation : >-
+        update_counter();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        update_counter2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        modify_field(standard_metadata.egress_spec, espec);
+
+"do_recirculate" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 579
+    implementation : >-
+        remove_header(sflow_sample_header);
+        remove_header(sflow_counter);
+        remove_header(sflow_counter2);
+        recirculate(parse_next);
+
+"frecord2nd" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 523
+    implementation : >-
+        update_frame2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+
+"drop_act" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 508
+    implementation : >-
+        drop();
+
+"counter_record2" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 550
+    implementation : >-
+        update_counter2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+
+"stop_recirculate2" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 566
+    implementation : >-
+        update_counter();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        update_counter2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        drop();
+
+"stop_recirculate1" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 573
+    implementation : >-
+        update_counter();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        drop();
+
+"record_flow1__0" :
+    name : "record_flow1"
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 592
+    parameter_list :
+        - "espec" : 16
+    implementation : >-
+        update_frame();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        modify_field(standard_metadata.egress_spec, espec);
+
+"forward" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 536
+    parameter_list :
+        - "espec" : 16
+    implementation : >-
+        modify_field(standard_metadata.egress_spec, espec);
+
+"record_flow2__0" :
+    name : "record_flow2"
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 598
+    parameter_list :
+        - "espec" : 16
+    implementation : >-
+        update_frame2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        modify_field(standard_metadata.egress_spec, espec);
+
+"stop_flow2" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 610
+    implementation : >-
+        update_frame2();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+        drop();
+
+"stop_flow1" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 604
+    implementation : >-
+        update_frame();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+
+"frecord1st" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 513
+    implementation : >-
+        update_frame();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+
+"counter_record" :
+    type : action
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 542
+    implementation : >-
+        update_counter();
+        subtract_from_field(sflow_header.num_samples, 0x1);
+
+##########################################
+# Ingress and Egress tables              #
+##########################################
+
+"t_do_recirculate":
+    type : table
+    allowed_actions : 
+        - "do_recirculate"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 708
+
+"nor_tbl":
+    type : table
+    match_on : 
+        "standard_metadata.ingress_port" : "exact"
+    allowed_actions : 
+        - "forward"
+        - "drop_act"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 695
+
+"t_do_frecirculate":
+    type : table
+    allowed_actions : 
+        - "fdo_recirculate"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 712
+
+"no_record_flow1":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "num_decrement"
+        - "drop_act"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 628
+
+"record_flow2":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "record_flow2"
+        - "stop_flow2"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 668
+
+"in_tbl2":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "need_recirculate"
+        - "stop_recirculate2"
+        - "stop_recirculate1"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 681
+
+"no_record_flow2":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "num_decrement"
+        - "drop_act"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 642
+
+"record_flow1":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "record_flow1"
+        - "stop_flow1"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 655
+
+##########################################
+# Ingress conditionals sets              #
+##########################################
+
+"_condition_0":
+    type : conditional
+    format : bracketed_expr
+    condition : "(valid(udp)) and ((udp.dport) == (6343))"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 0
+
+"_condition_1":
+    type : conditional
+    format : bracketed_expr
+    condition : "valid(sflow_counter)"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 725
+
+"_condition_2":
+    type : conditional
+    format : bracketed_expr
+    condition : "((valid(sflow_sample)) and (((sflow_sample.ip_flag) & (8191)) == (0))) and ((sflow_sample.eth_type) != (2054))"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 0
+
+"_condition_4":
+    type : conditional
+    format : bracketed_expr
+    condition : "((valid(sflow_sample2)) and (((sflow_sample2.ip_flag) & (8191)) == (0))) and ((sflow_sample.eth_type) != (2054))"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 0
+
+"_condition_5":
+    type : conditional
+    format : bracketed_expr
+    condition : "valid(sflow_sample2)"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 738
+
+"_condition_3":
+    type : conditional
+    format : bracketed_expr
+    condition : "valid(sflow_sample)"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 732
+
+##########################################
+# Ingress control flow                   #
+##########################################
+
+ingress_flow:
+    type : control_flow
+    doc : "control flow for ingress"
+    format : dot
+    start_state : "_condition_0"
+    implementation : >-
+        digraph {
+            _condition_0 -> nor_tbl [condition = false]
+            _condition_0 -> _condition_1 [condition = true]
+            _condition_1 -> _condition_2 [condition = false]
+            _condition_1 -> in_tbl2 [condition = true]
+            in_tbl2 -> exit_control_flow [action = always]
+            _condition_2 -> _condition_3 [condition = false]
+            _condition_2 -> record_flow1 [condition = true]
+            record_flow1 -> _condition_4 [action = always]
+            _condition_4 -> _condition_5 [condition = false]
+            _condition_4 -> record_flow2 [condition = true]
+            record_flow2 -> exit_control_flow [action = always]
+            _condition_5 -> exit_control_flow [condition = false]
+            _condition_5 -> no_record_flow2 [condition = true]
+            no_record_flow2 -> exit_control_flow [action = always]
+            _condition_3 -> exit_control_flow [condition = false]
+            _condition_3 -> no_record_flow1 [condition = true]
+            no_record_flow1 -> _condition_4 [action = always]
+            nor_tbl -> exit_control_flow [action = always]
+        }
+
+##########################################
+# Egress conditionals sets               #
+##########################################
+
+"_condition_6":
+    type : conditional
+    format : bracketed_expr
+    condition : "valid(sflow_counter)"
+
+"_condition_7":
+    type : conditional
+    format : bracketed_expr
+    condition : "(num_metadata.cur_num) > (2)"
+
+"_condition_8":
+    type : conditional
+    format : bracketed_expr
+    condition : "valid(sflow_sample)"
+
+"_condition_9":
+    type : conditional
+    format : bracketed_expr
+    condition : "(num_metadata.cur_num) > (2)"
+
+##########################################
+# Egress control flow                    #
+##########################################
+
+egress_flow:
+    type : control_flow
+    doc : "control flow for egress"
+    format : dot
+    start_state : "_condition_6"
+    implementation : >-
+        digraph {
+            _condition_6 -> _condition_8 [condition = false]
+            _condition_6 -> _condition_7 [condition = true]
+            _condition_7 -> exit_control_flow [condition = false]
+            _condition_7 -> t_do_recirculate [condition = true]
+            t_do_recirculate -> exit_control_flow [action = do_recirculate]
+            t_do_recirculate -> _condition_8 [action = default]
+            _condition_8 -> exit_control_flow [condition = false]
+            _condition_8 -> _condition_9 [condition = true]
+            _condition_9 -> exit_control_flow [condition = false]
+            _condition_9 -> t_do_frecirculate [condition = true]
+            t_do_frecirculate -> exit_control_flow [action = always]
+        }
+
+##########################################
+# Processor layout                       #
+##########################################
+
+layout:
+    type : processor_layout
+    format : list
+    implementation :
+        - parser
+        - ingress
+        - egress
+
+##########################################
+# Source info                            #
+##########################################
+
+source_info :
+    type : source_info
+    date : "2026/05/26 08:49:50"
+    p4_version : "1.0"
+    source_files : 
+        - 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    output_file : 'sFlow-offload.yml'
+

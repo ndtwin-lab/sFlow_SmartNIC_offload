@@ -1,0 +1,3005 @@
+{
+    "source_info": {
+        "action": {
+            "node_source_map": {
+                "num_decrement": {
+                    "debug_state_value": 50331648, 
+                    "label": "pif_action_state_num_decrement", 
+                    "live_ranges": null, 
+                    "lineno": 587, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "need_recirculate": {
+                    "debug_state_value": 50331649, 
+                    "label": "pif_action_state_need_recirculate", 
+                    "live_ranges": null, 
+                    "lineno": 558, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "do_recirculate": {
+                    "debug_state_value": 50331650, 
+                    "label": "pif_action_state_do_recirculate", 
+                    "live_ranges": null, 
+                    "lineno": 579, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "frecord2nd": {
+                    "debug_state_value": 0, 
+                    "label": "pif_action_state_frecord2nd", 
+                    "live_ranges": null, 
+                    "lineno": 523, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "drop_act": {
+                    "debug_state_value": 50331651, 
+                    "label": "pif_action_state_drop_act", 
+                    "live_ranges": null, 
+                    "lineno": 508, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "counter_record2": {
+                    "debug_state_value": 0, 
+                    "label": "pif_action_state_counter_record2", 
+                    "live_ranges": null, 
+                    "lineno": 550, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "stop_recirculate2": {
+                    "debug_state_value": 50331652, 
+                    "label": "pif_action_state_stop_recirculate2", 
+                    "live_ranges": null, 
+                    "lineno": 566, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "stop_recirculate1": {
+                    "debug_state_value": 50331653, 
+                    "label": "pif_action_state_stop_recirculate1", 
+                    "live_ranges": null, 
+                    "lineno": 573, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "record_flow2": {
+                    "debug_state_value": 50331654, 
+                    "label": "pif_action_state_record_flow2", 
+                    "live_ranges": null, 
+                    "lineno": 598, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "stop_flow1": {
+                    "debug_state_value": 50331655, 
+                    "label": "pif_action_state_stop_flow1", 
+                    "live_ranges": null, 
+                    "lineno": 604, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "record_flow1": {
+                    "debug_state_value": 50331656, 
+                    "label": "pif_action_state_record_flow1", 
+                    "live_ranges": null, 
+                    "lineno": 592, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "forward": {
+                    "debug_state_value": 50331657, 
+                    "label": "pif_action_state_forward", 
+                    "live_ranges": null, 
+                    "lineno": 536, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "stop_flow2": {
+                    "debug_state_value": 50331658, 
+                    "label": "pif_action_state_stop_flow2", 
+                    "live_ranges": null, 
+                    "lineno": 610, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "fdo_recirculate": {
+                    "debug_state_value": 50331659, 
+                    "label": "pif_action_state_fdo_recirculate", 
+                    "live_ranges": null, 
+                    "lineno": 616, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "frecord1st": {
+                    "debug_state_value": 0, 
+                    "label": "pif_action_state_frecord1st", 
+                    "live_ranges": null, 
+                    "lineno": 513, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "counter_record": {
+                    "debug_state_value": 0, 
+                    "label": "pif_action_state_counter_record", 
+                    "live_ranges": null, 
+                    "lineno": 542, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }
+            }
+        }, 
+        "ctlflow": {
+            "egress_flow": {
+                "node_source_map": {
+                    "_condition_7": {
+                        "debug_state_value": 33619971, 
+                        "label": "pif_ctlflow_state_egress_flow__condition_7", 
+                        "live_ranges": null, 
+                        "lineno": null, 
+                        "filename": null
+                    }, 
+                    "_condition_6": {
+                        "debug_state_value": 33619973, 
+                        "label": "pif_ctlflow_state_egress_flow__condition_6", 
+                        "live_ranges": null, 
+                        "lineno": null, 
+                        "filename": null
+                    }, 
+                    "_condition_9": {
+                        "debug_state_value": 33619969, 
+                        "label": "pif_ctlflow_state_egress_flow__condition_9", 
+                        "live_ranges": null, 
+                        "lineno": null, 
+                        "filename": null
+                    }, 
+                    "_condition_8": {
+                        "debug_state_value": 33619968, 
+                        "label": "pif_ctlflow_state_egress_flow__condition_8", 
+                        "live_ranges": null, 
+                        "lineno": null, 
+                        "filename": null
+                    }, 
+                    "t_do_frecirculate": {
+                        "debug_state_value": 33619970, 
+                        "label": "pif_ctlflow_state_egress_flow_t_do_frecirculate", 
+                        "live_ranges": null, 
+                        "lineno": 712, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "t_do_recirculate": {
+                        "debug_state_value": 33619972, 
+                        "label": "pif_ctlflow_state_egress_flow_t_do_recirculate", 
+                        "live_ranges": null, 
+                        "lineno": 708, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }
+                }
+            }, 
+            "ingress_flow": {
+                "node_source_map": {
+                    "_condition_5": {
+                        "debug_state_value": 33554440, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_5", 
+                        "live_ranges": null, 
+                        "lineno": 738, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_4": {
+                        "debug_state_value": 33554433, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_4", 
+                        "live_ranges": null, 
+                        "lineno": 0, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_3": {
+                        "debug_state_value": 33554435, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_3", 
+                        "live_ranges": null, 
+                        "lineno": 732, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_2": {
+                        "debug_state_value": 33554434, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_2", 
+                        "live_ranges": null, 
+                        "lineno": 0, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_1": {
+                        "debug_state_value": 33554436, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_1", 
+                        "live_ranges": null, 
+                        "lineno": 725, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_0": {
+                        "debug_state_value": 33554439, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_0", 
+                        "live_ranges": null, 
+                        "lineno": 0, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "no_record_flow1": {
+                        "debug_state_value": 33554438, 
+                        "label": "pif_ctlflow_state_ingress_flow_no_record_flow1", 
+                        "live_ranges": null, 
+                        "lineno": 628, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "no_record_flow2": {
+                        "debug_state_value": 33554441, 
+                        "label": "pif_ctlflow_state_ingress_flow_no_record_flow2", 
+                        "live_ranges": null, 
+                        "lineno": 642, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "in_tbl2": {
+                        "debug_state_value": 33554437, 
+                        "label": "pif_ctlflow_state_ingress_flow_in_tbl2", 
+                        "live_ranges": null, 
+                        "lineno": 681, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "record_flow2": {
+                        "debug_state_value": 33554442, 
+                        "label": "pif_ctlflow_state_ingress_flow_record_flow2", 
+                        "live_ranges": null, 
+                        "lineno": 668, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "record_flow1": {
+                        "debug_state_value": 33554432, 
+                        "label": "pif_ctlflow_state_ingress_flow_record_flow1", 
+                        "live_ranges": null, 
+                        "lineno": 655, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "nor_tbl": {
+                        "debug_state_value": 33554443, 
+                        "label": "pif_ctlflow_state_ingress_flow_nor_tbl", 
+                        "live_ranges": null, 
+                        "lineno": 695, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }
+                }
+            }
+        }, 
+        "table_hit": {
+            "node_source_map": {
+                "num_decrement": {
+                    "label": "pif_table_hit_num_decrement", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "need_recirculate": {
+                    "label": "pif_table_hit_need_recirculate", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "do_recirculate": {
+                    "label": "pif_table_hit_do_recirculate", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "frecord2nd": {
+                    "label": "pif_table_hit_frecord2nd", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "drop_act": {
+                    "label": "pif_table_hit_drop_act", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "counter_record2": {
+                    "label": "pif_table_hit_counter_record2", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "stop_recirculate2": {
+                    "label": "pif_table_hit_stop_recirculate2", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "stop_recirculate1": {
+                    "label": "pif_table_hit_stop_recirculate1", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "record_flow2": {
+                    "label": "pif_table_hit_record_flow2", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "stop_flow1": {
+                    "label": "pif_table_hit_stop_flow1", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "record_flow1": {
+                    "label": "pif_table_hit_record_flow1", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "forward": {
+                    "label": "pif_table_hit_forward", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "stop_flow2": {
+                    "label": "pif_table_hit_stop_flow2", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "fdo_recirculate": {
+                    "label": "pif_table_hit_fdo_recirculate", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "frecord1st": {
+                    "label": "pif_table_hit_frecord1st", 
+                    "lineno": null, 
+                    "filename": null
+                }, 
+                "counter_record": {
+                    "label": "pif_table_hit_counter_record", 
+                    "lineno": null, 
+                    "filename": null
+                }
+            }
+        }, 
+        "parrep": {
+            "node_source_map": {
+                "eth_parse": {
+                    "debug_state_value": 16777217, 
+                    "label": "pif_parrep_state_eth_parse", 
+                    "live_ranges": null, 
+                    "lineno": 410, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_counter": {
+                    "debug_state_value": 16777222, 
+                    "label": "pif_parrep_state_parse_sflow_counter", 
+                    "live_ranges": null, 
+                    "lineno": 470, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_udp": {
+                    "debug_state_value": 16777219, 
+                    "label": "pif_parrep_state_parse_udp", 
+                    "live_ranges": null, 
+                    "lineno": 434, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_header": {
+                    "debug_state_value": 16777220, 
+                    "label": "pif_parrep_state_parse_sflow_header", 
+                    "live_ranges": null, 
+                    "lineno": 447, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_counter_2": {
+                    "debug_state_value": 16777224, 
+                    "label": "pif_parrep_state_parse_sflow_counter_2", 
+                    "live_ranges": null, 
+                    "lineno": 481, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "start": {
+                    "debug_state_value": 16777216, 
+                    "label": "pif_parrep_state_start", 
+                    "live_ranges": null, 
+                    "lineno": 405, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_sample_2": {
+                    "debug_state_value": 16777225, 
+                    "label": "pif_parrep_state_parse_sflow_sample_2", 
+                    "live_ranges": null, 
+                    "lineno": 498, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_sample_header": {
+                    "debug_state_value": 16777221, 
+                    "label": "pif_parrep_state_parse_sflow_sample_header", 
+                    "live_ranges": null, 
+                    "lineno": 459, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_sflow_sample": {
+                    "debug_state_value": 16777223, 
+                    "label": "pif_parrep_state_parse_sflow_sample", 
+                    "live_ranges": null, 
+                    "lineno": 487, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }, 
+                "parse_ipv4": {
+                    "debug_state_value": 16777218, 
+                    "label": "pif_parrep_state_parse_ipv4", 
+                    "live_ranges": null, 
+                    "lineno": 422, 
+                    "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                }
+            }
+        }
+    }, 
+    "parrep": {
+        "tierinfo": {
+            "0": {
+                "header_type_map": {
+                    "0": [
+                        "eth"
+                    ]
+                }
+            }, 
+            "1": {
+                "header_type_map": {
+                    "0": [
+                        "ipv4"
+                    ]
+                }
+            }, 
+            "2": {
+                "header_type_map": {
+                    "0": [
+                        "udp"
+                    ]
+                }
+            }, 
+            "3": {
+                "header_type_map": {
+                    "0": [
+                        "sflow_header"
+                    ]
+                }
+            }, 
+            "4": {
+                "header_type_map": {
+                    "0": [
+                        "sflow_sample_header"
+                    ]
+                }
+            }, 
+            "5": {
+                "header_type_map": {
+                    "0": [
+                        "sflow_counter"
+                    ], 
+                    "1": [
+                        "sflow_sample"
+                    ]
+                }
+            }, 
+            "6": {
+                "header_type_map": {
+                    "0": [
+                        "sflow_counter2"
+                    ], 
+                    "1": [
+                        "sflow_sample2"
+                    ]
+                }
+            }
+        }, 
+        "control_off_lw": 0, 
+        "node_map": {
+            "0": "start", 
+            "1": "eth_parse", 
+            "2": "parse_ipv4", 
+            "3": "parse_udp", 
+            "4": "parse_sflow_header", 
+            "5": "parse_sflow_sample_header", 
+            "6": "parse_sflow_counter", 
+            "7": "parse_sflow_sample", 
+            "8": "parse_sflow_counter_2", 
+            "9": "parse_sflow_sample_2"
+        }, 
+        "headers": {
+            "udp": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 0, 
+                                "name": "sport", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sport", 
+                        "lmoff": 0, 
+                        "width": 16, 
+                        "cname": "sport", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 16, 
+                                "name": "dport", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dport", 
+                        "lmoff": 16, 
+                        "width": 16, 
+                        "cname": "dport", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 32, 
+                                "name": "len", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "len", 
+                        "lmoff": 32, 
+                        "width": 16, 
+                        "cname": "len", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 48, 
+                                "name": "checksum", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "checksum", 
+                        "lmoff": 48, 
+                        "width": 16, 
+                        "cname": "checksum", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 11
+            }, 
+            "sflow_sample": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 0, 
+                                "name": "in_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "in_port", 
+                        "lmoff": 0, 
+                        "width": 16, 
+                        "cname": "in_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 16, 
+                                "name": "out_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "out_port", 
+                        "lmoff": 16, 
+                        "width": 16, 
+                        "cname": "out_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "sample_rate", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_rate", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "sample_rate", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 64, 
+                                "name": "eth_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_type", 
+                        "lmoff": 64, 
+                        "width": 32, 
+                        "cname": "eth_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 96, 
+                                "name": "frame_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "frame_length", 
+                        "lmoff": 96, 
+                        "width": 16, 
+                        "cname": "frame_length", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 112, 
+                                "name": "protocol", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "protocol", 
+                        "lmoff": 112, 
+                        "width": 16, 
+                        "cname": "protocol", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "srcIP", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "srcIP", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "srcIP", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 160, 
+                                "name": "dstIP", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dstIP", 
+                        "lmoff": 160, 
+                        "width": 32, 
+                        "cname": "dstIP", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 192, 
+                                "name": "ip_flag", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "ip_flag", 
+                        "lmoff": 192, 
+                        "width": 16, 
+                        "cname": "ip_flag", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 208, 
+                                "name": "tcp_flag", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "tcp_flag", 
+                        "lmoff": 208, 
+                        "width": 16, 
+                        "cname": "tcp_flag", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 224, 
+                                "name": "srcPort", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "srcPort", 
+                        "lmoff": 224, 
+                        "width": 16, 
+                        "cname": "srcPort", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 240, 
+                                "name": "dstPort", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dstPort", 
+                        "lmoff": 240, 
+                        "width": 16, 
+                        "cname": "dstPort", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 22
+            }, 
+            "sflow_sample2": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "sample_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_type", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "sample_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "sample_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_length", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "sample_length", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 64, 
+                                "name": "in_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "in_port", 
+                        "lmoff": 64, 
+                        "width": 16, 
+                        "cname": "in_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 80, 
+                                "name": "out_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "out_port", 
+                        "lmoff": 80, 
+                        "width": 16, 
+                        "cname": "out_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 96, 
+                                "name": "sample_rate", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_rate", 
+                        "lmoff": 96, 
+                        "width": 32, 
+                        "cname": "sample_rate", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "eth_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_type", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "eth_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 160, 
+                                "name": "frame_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "frame_length", 
+                        "lmoff": 160, 
+                        "width": 16, 
+                        "cname": "frame_length", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 176, 
+                                "name": "protocol", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "protocol", 
+                        "lmoff": 176, 
+                        "width": 16, 
+                        "cname": "protocol", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 192, 
+                                "name": "srcIP", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "srcIP", 
+                        "lmoff": 192, 
+                        "width": 32, 
+                        "cname": "srcIP", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 224, 
+                                "name": "dstIP", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dstIP", 
+                        "lmoff": 224, 
+                        "width": 32, 
+                        "cname": "dstIP", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 256, 
+                                "name": "ip_flag", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "ip_flag", 
+                        "lmoff": 256, 
+                        "width": 16, 
+                        "cname": "ip_flag", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 272, 
+                                "name": "tcp_flag", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "tcp_flag", 
+                        "lmoff": 272, 
+                        "width": 16, 
+                        "cname": "tcp_flag", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 288, 
+                                "name": "srcPort", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "srcPort", 
+                        "lmoff": 288, 
+                        "width": 16, 
+                        "cname": "srcPort", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 304, 
+                                "name": "dstPort", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dstPort", 
+                        "lmoff": 304, 
+                        "width": 16, 
+                        "cname": "dstPort", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 64
+            }, 
+            "sflow_sample_header": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "sample_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_type", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "sample_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "sample_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_length", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "sample_length", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 20
+            }, 
+            "ipv4": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 4, 
+                                "lmbitoff": 0, 
+                                "name": "version", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "version", 
+                        "lmoff": 0, 
+                        "width": 4, 
+                        "cname": "version", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 4, 
+                                "lmbitoff": 4, 
+                                "name": "ihl", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "ihl", 
+                        "lmoff": 4, 
+                        "width": 4, 
+                        "cname": "ihl", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 8, 
+                                "name": "diffserv", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "diffserv", 
+                        "lmoff": 8, 
+                        "width": 8, 
+                        "cname": "diffserv", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 16, 
+                                "name": "totalLen", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "totalLen", 
+                        "lmoff": 16, 
+                        "width": 16, 
+                        "cname": "totalLen", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 32, 
+                                "name": "identification", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "identification", 
+                        "lmoff": 32, 
+                        "width": 16, 
+                        "cname": "identification", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 3, 
+                                "lmbitoff": 48, 
+                                "name": "flags", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "flags", 
+                        "lmoff": 48, 
+                        "width": 3, 
+                        "cname": "flags", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 13, 
+                                "lmbitoff": 51, 
+                                "name": "fragOffset", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "fragOffset", 
+                        "lmoff": 51, 
+                        "width": 13, 
+                        "cname": "fragOffset", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 64, 
+                                "name": "ttl", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "ttl", 
+                        "lmoff": 64, 
+                        "width": 8, 
+                        "cname": "ttl", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 72, 
+                                "name": "protocol", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "protocol", 
+                        "lmoff": 72, 
+                        "width": 8, 
+                        "cname": "protocol", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 80, 
+                                "name": "hdrChecksum", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "hdrChecksum", 
+                        "lmoff": 80, 
+                        "width": 16, 
+                        "cname": "hdrChecksum", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 96, 
+                                "name": "srcAddr", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "srcAddr", 
+                        "lmoff": 96, 
+                        "width": 32, 
+                        "cname": "srcAddr", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "dstAddr", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dstAddr", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "dstAddr", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 6
+            }, 
+            "eth": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "dst", 
+                                "fldbitoff": 16
+                            }, 
+                            {
+                                "width": 16, 
+                                "lmbitoff": 32, 
+                                "name": "__dst_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "dst", 
+                        "lmoff": 0, 
+                        "width": 48, 
+                        "cname": "dst", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 48, 
+                                "name": "src", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 64, 
+                                "name": "__src_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "src", 
+                        "lmoff": 48, 
+                        "width": 48, 
+                        "cname": "src", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 96, 
+                                "name": "etype", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "etype", 
+                        "lmoff": 96, 
+                        "width": 16, 
+                        "cname": "etype", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 2
+            }, 
+            "sflow_counter": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "seqnum", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "seqnum", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "seqnum", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "id_index", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "id_index", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "id_index", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 64, 
+                                "name": "counter_records", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "counter_records", 
+                        "lmoff": 64, 
+                        "width": 32, 
+                        "cname": "counter_records", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 96, 
+                                "name": "eth_foramt", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_foramt", 
+                        "lmoff": 96, 
+                        "width": 32, 
+                        "cname": "eth_foramt", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "eth_data_len", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_data_len", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "eth_data_len", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 160, 
+                                "name": "alig_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "alig_err", 
+                        "lmoff": 160, 
+                        "width": 32, 
+                        "cname": "alig_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 192, 
+                                "name": "fcs_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "fcs_err", 
+                        "lmoff": 192, 
+                        "width": 32, 
+                        "cname": "fcs_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 224, 
+                                "name": "single_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "single_collision", 
+                        "lmoff": 224, 
+                        "width": 32, 
+                        "cname": "single_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 256, 
+                                "name": "multi_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "multi_collision", 
+                        "lmoff": 256, 
+                        "width": 32, 
+                        "cname": "multi_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 288, 
+                                "name": "sqe_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sqe_err", 
+                        "lmoff": 288, 
+                        "width": 32, 
+                        "cname": "sqe_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 320, 
+                                "name": "deffered", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "deffered", 
+                        "lmoff": 320, 
+                        "width": 32, 
+                        "cname": "deffered", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 352, 
+                                "name": "late_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "late_collision", 
+                        "lmoff": 352, 
+                        "width": 32, 
+                        "cname": "late_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 384, 
+                                "name": "excessive_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "excessive_collision", 
+                        "lmoff": 384, 
+                        "width": 32, 
+                        "cname": "excessive_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 416, 
+                                "name": "imt_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "imt_err", 
+                        "lmoff": 416, 
+                        "width": 32, 
+                        "cname": "imt_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 448, 
+                                "name": "carrier_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "carrier_err", 
+                        "lmoff": 448, 
+                        "width": 32, 
+                        "cname": "carrier_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 480, 
+                                "name": "frame_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "frame_err", 
+                        "lmoff": 480, 
+                        "width": 32, 
+                        "cname": "frame_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 512, 
+                                "name": "imr_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "imr_err", 
+                        "lmoff": 512, 
+                        "width": 32, 
+                        "cname": "imr_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 544, 
+                                "name": "symbol_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "symbol_err", 
+                        "lmoff": 544, 
+                        "width": 32, 
+                        "cname": "symbol_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 576, 
+                                "name": "g_format", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_format", 
+                        "lmoff": 576, 
+                        "width": 32, 
+                        "cname": "g_format", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 608, 
+                                "name": "g_data_len", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_data_len", 
+                        "lmoff": 608, 
+                        "width": 32, 
+                        "cname": "g_data_len", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 640, 
+                                "name": "g_if", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if", 
+                        "lmoff": 640, 
+                        "width": 32, 
+                        "cname": "g_if", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 672, 
+                                "name": "g_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_type", 
+                        "lmoff": 672, 
+                        "width": 32, 
+                        "cname": "g_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 704, 
+                                "name": "g_speed", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 736, 
+                                "name": "__g_speed_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_speed", 
+                        "lmoff": 704, 
+                        "width": 64, 
+                        "cname": "g_speed", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 768, 
+                                "name": "g_if_direction", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if_direction", 
+                        "lmoff": 768, 
+                        "width": 32, 
+                        "cname": "g_if_direction", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 800, 
+                                "name": "g_if_status", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if_status", 
+                        "lmoff": 800, 
+                        "width": 32, 
+                        "cname": "g_if_status", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 832, 
+                                "name": "g_in_octets", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 864, 
+                                "name": "__g_in_octets_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_octets", 
+                        "lmoff": 832, 
+                        "width": 64, 
+                        "cname": "g_in_octets", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 896, 
+                                "name": "g_in_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_pkts", 
+                        "lmoff": 896, 
+                        "width": 32, 
+                        "cname": "g_in_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 928, 
+                                "name": "g_in_multicast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_multicast_pkts", 
+                        "lmoff": 928, 
+                        "width": 32, 
+                        "cname": "g_in_multicast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 960, 
+                                "name": "g_in_broadcast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_broadcast_pkts", 
+                        "lmoff": 960, 
+                        "width": 32, 
+                        "cname": "g_in_broadcast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 992, 
+                                "name": "g_in_discards", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_discards", 
+                        "lmoff": 992, 
+                        "width": 32, 
+                        "cname": "g_in_discards", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1024, 
+                                "name": "g_in_errors", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_errors", 
+                        "lmoff": 1024, 
+                        "width": 32, 
+                        "cname": "g_in_errors", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1056, 
+                                "name": "g_in_unknown_protos", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_unknown_protos", 
+                        "lmoff": 1056, 
+                        "width": 32, 
+                        "cname": "g_in_unknown_protos", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1088, 
+                                "name": "g_out_octets", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1120, 
+                                "name": "__g_out_octets_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_octets", 
+                        "lmoff": 1088, 
+                        "width": 64, 
+                        "cname": "g_out_octets", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1152, 
+                                "name": "g_out_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_pkts", 
+                        "lmoff": 1152, 
+                        "width": 32, 
+                        "cname": "g_out_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1184, 
+                                "name": "g_out_multicast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_multicast_pkts", 
+                        "lmoff": 1184, 
+                        "width": 32, 
+                        "cname": "g_out_multicast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1216, 
+                                "name": "g_out_broadcast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_broadcast_pkts", 
+                        "lmoff": 1216, 
+                        "width": 32, 
+                        "cname": "g_out_broadcast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1248, 
+                                "name": "g_out_discards", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_discards", 
+                        "lmoff": 1248, 
+                        "width": 32, 
+                        "cname": "g_out_discards", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1280, 
+                                "name": "g_out_errors", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_errors", 
+                        "lmoff": 1280, 
+                        "width": 32, 
+                        "cname": "g_out_errors", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1312, 
+                                "name": "g_promiscuous_mode", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_promiscuous_mode", 
+                        "lmoff": 1312, 
+                        "width": 32, 
+                        "cname": "g_promiscuous_mode", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 22
+            }, 
+            "sflow_counter2": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "sample_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_type", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "sample_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "sample_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sample_length", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "sample_length", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 64, 
+                                "name": "seqnum", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "seqnum", 
+                        "lmoff": 64, 
+                        "width": 32, 
+                        "cname": "seqnum", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 96, 
+                                "name": "id_index", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "id_index", 
+                        "lmoff": 96, 
+                        "width": 32, 
+                        "cname": "id_index", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "counter_records", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "counter_records", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "counter_records", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 160, 
+                                "name": "eth_foramt", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_foramt", 
+                        "lmoff": 160, 
+                        "width": 32, 
+                        "cname": "eth_foramt", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 192, 
+                                "name": "eth_data_len", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "eth_data_len", 
+                        "lmoff": 192, 
+                        "width": 32, 
+                        "cname": "eth_data_len", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 224, 
+                                "name": "alig_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "alig_err", 
+                        "lmoff": 224, 
+                        "width": 32, 
+                        "cname": "alig_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 256, 
+                                "name": "fcs_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "fcs_err", 
+                        "lmoff": 256, 
+                        "width": 32, 
+                        "cname": "fcs_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 288, 
+                                "name": "single_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "single_collision", 
+                        "lmoff": 288, 
+                        "width": 32, 
+                        "cname": "single_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 320, 
+                                "name": "multi_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "multi_collision", 
+                        "lmoff": 320, 
+                        "width": 32, 
+                        "cname": "multi_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 352, 
+                                "name": "sqe_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "sqe_err", 
+                        "lmoff": 352, 
+                        "width": 32, 
+                        "cname": "sqe_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 384, 
+                                "name": "deffered", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "deffered", 
+                        "lmoff": 384, 
+                        "width": 32, 
+                        "cname": "deffered", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 416, 
+                                "name": "late_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "late_collision", 
+                        "lmoff": 416, 
+                        "width": 32, 
+                        "cname": "late_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 448, 
+                                "name": "excessive_collision", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "excessive_collision", 
+                        "lmoff": 448, 
+                        "width": 32, 
+                        "cname": "excessive_collision", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 480, 
+                                "name": "imt_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "imt_err", 
+                        "lmoff": 480, 
+                        "width": 32, 
+                        "cname": "imt_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 512, 
+                                "name": "carrier_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "carrier_err", 
+                        "lmoff": 512, 
+                        "width": 32, 
+                        "cname": "carrier_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 544, 
+                                "name": "frame_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "frame_err", 
+                        "lmoff": 544, 
+                        "width": 32, 
+                        "cname": "frame_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 576, 
+                                "name": "imr_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "imr_err", 
+                        "lmoff": 576, 
+                        "width": 32, 
+                        "cname": "imr_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 608, 
+                                "name": "symbol_err", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "symbol_err", 
+                        "lmoff": 608, 
+                        "width": 32, 
+                        "cname": "symbol_err", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 640, 
+                                "name": "g_format", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_format", 
+                        "lmoff": 640, 
+                        "width": 32, 
+                        "cname": "g_format", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 672, 
+                                "name": "g_data_len", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_data_len", 
+                        "lmoff": 672, 
+                        "width": 32, 
+                        "cname": "g_data_len", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 704, 
+                                "name": "g_if", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if", 
+                        "lmoff": 704, 
+                        "width": 32, 
+                        "cname": "g_if", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 736, 
+                                "name": "g_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_type", 
+                        "lmoff": 736, 
+                        "width": 32, 
+                        "cname": "g_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 768, 
+                                "name": "g_speed", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 800, 
+                                "name": "__g_speed_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_speed", 
+                        "lmoff": 768, 
+                        "width": 64, 
+                        "cname": "g_speed", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 832, 
+                                "name": "g_if_direction", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if_direction", 
+                        "lmoff": 832, 
+                        "width": 32, 
+                        "cname": "g_if_direction", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 864, 
+                                "name": "g_if_status", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_if_status", 
+                        "lmoff": 864, 
+                        "width": 32, 
+                        "cname": "g_if_status", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 896, 
+                                "name": "g_in_octets", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 928, 
+                                "name": "__g_in_octets_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_octets", 
+                        "lmoff": 896, 
+                        "width": 64, 
+                        "cname": "g_in_octets", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 960, 
+                                "name": "g_in_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_pkts", 
+                        "lmoff": 960, 
+                        "width": 32, 
+                        "cname": "g_in_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 992, 
+                                "name": "g_in_multicast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_multicast_pkts", 
+                        "lmoff": 992, 
+                        "width": 32, 
+                        "cname": "g_in_multicast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1024, 
+                                "name": "g_in_broadcast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_broadcast_pkts", 
+                        "lmoff": 1024, 
+                        "width": 32, 
+                        "cname": "g_in_broadcast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1056, 
+                                "name": "g_in_discards", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_discards", 
+                        "lmoff": 1056, 
+                        "width": 32, 
+                        "cname": "g_in_discards", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1088, 
+                                "name": "g_in_errors", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_errors", 
+                        "lmoff": 1088, 
+                        "width": 32, 
+                        "cname": "g_in_errors", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1120, 
+                                "name": "g_in_unknown_protos", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_in_unknown_protos", 
+                        "lmoff": 1120, 
+                        "width": 32, 
+                        "cname": "g_in_unknown_protos", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1152, 
+                                "name": "g_out_octets", 
+                                "fldbitoff": 32
+                            }, 
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1184, 
+                                "name": "__g_out_octets_1", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_octets", 
+                        "lmoff": 1152, 
+                        "width": 64, 
+                        "cname": "g_out_octets", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1216, 
+                                "name": "g_out_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_pkts", 
+                        "lmoff": 1216, 
+                        "width": 32, 
+                        "cname": "g_out_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1248, 
+                                "name": "g_out_multicast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_multicast_pkts", 
+                        "lmoff": 1248, 
+                        "width": 32, 
+                        "cname": "g_out_multicast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1280, 
+                                "name": "g_out_broadcast_pkts", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_broadcast_pkts", 
+                        "lmoff": 1280, 
+                        "width": 32, 
+                        "cname": "g_out_broadcast_pkts", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1312, 
+                                "name": "g_out_discards", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_discards", 
+                        "lmoff": 1312, 
+                        "width": 32, 
+                        "cname": "g_out_discards", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1344, 
+                                "name": "g_out_errors", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_out_errors", 
+                        "lmoff": 1344, 
+                        "width": 32, 
+                        "cname": "g_out_errors", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 1376, 
+                                "name": "g_promiscuous_mode", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "g_promiscuous_mode", 
+                        "lmoff": 1376, 
+                        "width": 32, 
+                        "cname": "g_promiscuous_mode", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 64
+            }, 
+            "sflow_header": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "version", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "version", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "version", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 32, 
+                                "name": "agent_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "agent_type", 
+                        "lmoff": 32, 
+                        "width": 32, 
+                        "cname": "agent_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 64, 
+                                "name": "agent_ip", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "agent_ip", 
+                        "lmoff": 64, 
+                        "width": 32, 
+                        "cname": "agent_ip", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 96, 
+                                "name": "agent_id", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "agent_id", 
+                        "lmoff": 96, 
+                        "width": 32, 
+                        "cname": "agent_id", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 128, 
+                                "name": "seq_num", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "seq_num", 
+                        "lmoff": 128, 
+                        "width": 32, 
+                        "cname": "seq_num", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 160, 
+                                "name": "uptime", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "uptime", 
+                        "lmoff": 160, 
+                        "width": 32, 
+                        "cname": "uptime", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 192, 
+                                "name": "num_samples", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "num_samples", 
+                        "lmoff": 192, 
+                        "width": 32, 
+                        "cname": "num_samples", 
+                        "attributes": {}
+                    }
+                ], 
+                "off_lw": 13
+            }
+        }, 
+        "rt_symbols": {
+            "0": "_parrep_0", 
+            "1": "_parrep_1", 
+            "2": "_parrep_2", 
+            "3": "_parrep_3", 
+            "4": "_parrep_4", 
+            "5": "_parrep_5", 
+            "6": "_parrep_6", 
+            "7": "_parrep_7"
+        }, 
+        "control_layout": [
+            {
+                "tier": null, 
+                "width": 1, 
+                "off": 0, 
+                "field": "valid"
+            }, 
+            {
+                "tier": 0, 
+                "width": 1, 
+                "off": 1, 
+                "field": "t0_valid"
+            }, 
+            {
+                "tier": 0, 
+                "width": 1, 
+                "off": 2, 
+                "field": "t0_dirty"
+            }, 
+            {
+                "tier": 0, 
+                "width": 1, 
+                "off": 3, 
+                "field": "t0_orig_len"
+            }, 
+            {
+                "tier": 1, 
+                "width": 1, 
+                "off": 4, 
+                "field": "t1_valid"
+            }, 
+            {
+                "tier": 1, 
+                "width": 1, 
+                "off": 5, 
+                "field": "t1_dirty"
+            }, 
+            {
+                "tier": 1, 
+                "width": 1, 
+                "off": 6, 
+                "field": "t1_orig_len"
+            }, 
+            {
+                "tier": 2, 
+                "width": 1, 
+                "off": 7, 
+                "field": "t2_valid"
+            }, 
+            {
+                "tier": 2, 
+                "width": 1, 
+                "off": 8, 
+                "field": "t2_dirty"
+            }, 
+            {
+                "tier": 2, 
+                "width": 1, 
+                "off": 9, 
+                "field": "t2_orig_len"
+            }, 
+            {
+                "tier": 3, 
+                "width": 1, 
+                "off": 10, 
+                "field": "t3_valid"
+            }, 
+            {
+                "tier": 3, 
+                "width": 1, 
+                "off": 11, 
+                "field": "t3_dirty"
+            }, 
+            {
+                "tier": 3, 
+                "width": 1, 
+                "off": 12, 
+                "field": "t3_orig_len"
+            }, 
+            {
+                "tier": 4, 
+                "width": 1, 
+                "off": 13, 
+                "field": "t4_valid"
+            }, 
+            {
+                "tier": 4, 
+                "width": 1, 
+                "off": 14, 
+                "field": "t4_dirty"
+            }, 
+            {
+                "tier": 4, 
+                "width": 1, 
+                "off": 15, 
+                "field": "t4_orig_len"
+            }, 
+            {
+                "tier": 5, 
+                "width": 1, 
+                "off": 16, 
+                "field": "t5_valid"
+            }, 
+            {
+                "tier": 5, 
+                "width": 1, 
+                "off": 17, 
+                "field": "t5_type"
+            }, 
+            {
+                "tier": 5, 
+                "width": 1, 
+                "off": 18, 
+                "field": "t5_dirty"
+            }, 
+            {
+                "tier": 5, 
+                "width": 8, 
+                "off": 19, 
+                "field": "t5_orig_len"
+            }, 
+            {
+                "tier": 6, 
+                "width": 5, 
+                "off": 27, 
+                "field": "_padding_0"
+            }, 
+            {
+                "tier": 6, 
+                "width": 1, 
+                "off": 32, 
+                "field": "t6_valid"
+            }, 
+            {
+                "tier": 6, 
+                "width": 1, 
+                "off": 33, 
+                "field": "t6_type"
+            }, 
+            {
+                "tier": 6, 
+                "width": 1, 
+                "off": 34, 
+                "field": "t6_dirty"
+            }, 
+            {
+                "tier": 6, 
+                "width": 8, 
+                "off": 35, 
+                "field": "t6_orig_len"
+            }
+        ], 
+        "stacked_headers": [], 
+        "metadata": {
+            "standard_metadata": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 32, 
+                                "lmbitoff": 0, 
+                                "name": "clone_spec", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "clone_spec", 
+                        "lmoff": 0, 
+                        "width": 32, 
+                        "cname": "clone_spec", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 32, 
+                                "name": "egress_spec", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "egress_spec", 
+                        "lmoff": 32, 
+                        "width": 16, 
+                        "cname": "egress_spec", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 48, 
+                                "name": "egress_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "egress_port", 
+                        "lmoff": 48, 
+                        "width": 16, 
+                        "cname": "egress_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 14, 
+                                "lmbitoff": 64, 
+                                "name": "packet_length", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "packet_length", 
+                        "lmoff": 64, 
+                        "width": 14, 
+                        "cname": "packet_length", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 10, 
+                                "lmbitoff": 78, 
+                                "name": "egress_instance", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "egress_instance", 
+                        "lmoff": 78, 
+                        "width": 10, 
+                        "cname": "egress_instance", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 88, 
+                                "name": "parser_error_location", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "parser_error_location", 
+                        "lmoff": 88, 
+                        "width": 8, 
+                        "cname": "parser_error_location", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 10, 
+                                "lmbitoff": 96, 
+                                "name": "ingress_port", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "ingress_port", 
+                        "lmoff": 96, 
+                        "width": 10, 
+                        "cname": "ingress_port", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 4, 
+                                "lmbitoff": 106, 
+                                "name": "instance_type", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "instance_type", 
+                        "lmoff": 106, 
+                        "width": 4, 
+                        "cname": "instance_type", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 3, 
+                                "lmbitoff": 110, 
+                                "name": "parser_status", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "parser_status", 
+                        "lmoff": 110, 
+                        "width": 3, 
+                        "cname": "parser_status", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 15, 
+                                "lmbitoff": 113, 
+                                "name": "_padding_0", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "_padding_0", 
+                        "lmoff": 113, 
+                        "width": 15, 
+                        "cname": "_padding_0", 
+                        "attributes": {
+                            "padding": true
+                        }
+                    }
+                ], 
+                "off_lw": 108
+            }, 
+            "num_metadata": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 0, 
+                                "name": "cur_num", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "cur_num", 
+                        "lmoff": 0, 
+                        "width": 8, 
+                        "cname": "cur_num", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 24, 
+                                "lmbitoff": 8, 
+                                "name": "_padding_0", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "_padding_0", 
+                        "lmoff": 8, 
+                        "width": 24, 
+                        "cname": "_padding_0", 
+                        "attributes": {
+                            "padding": true
+                        }
+                    }
+                ], 
+                "off_lw": 112
+            }, 
+            "recirculate_fl": {
+                "layout": [
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 0, 
+                                "name": "fl", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "fl", 
+                        "lmoff": 0, 
+                        "width": 8, 
+                        "cname": "fl", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 8, 
+                                "lmbitoff": 8, 
+                                "name": "recirculate_count", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "recirculate_count", 
+                        "lmoff": 8, 
+                        "width": 8, 
+                        "cname": "recirculate_count", 
+                        "attributes": {}
+                    }, 
+                    {
+                        "layout": [
+                            {
+                                "width": 16, 
+                                "lmbitoff": 16, 
+                                "name": "_padding_0", 
+                                "fldbitoff": 0
+                            }
+                        ], 
+                        "name": "_padding_0", 
+                        "lmoff": 16, 
+                        "width": 16, 
+                        "cname": "_padding_0", 
+                        "attributes": {
+                            "padding": true
+                        }
+                    }
+                ], 
+                "off_lw": 113
+            }
+        }
+    }, 
+    "counters": {
+        "direct_counter": {}
+    }
+}

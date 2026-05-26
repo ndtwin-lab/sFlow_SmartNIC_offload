@@ -1,0 +1,241 @@
+{
+    "tables": {
+        "t_do_frecirculate": {
+            "default_rule": {
+                "action": {
+                    "type": "fdo_recirculate"
+                }, 
+                "name": "do"
+            }
+        }, 
+        "no_record_flow1": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "drop_act"
+                    }, 
+                    "name": "droping", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "drop_act"
+                    }, 
+                    "name": "dropping2", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "v0.0"
+                        }
+                    }, 
+                    "type": "num_decrement"
+                }, 
+                "name": "only_decrease"
+            }
+        }, 
+        "no_record_flow2": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "drop_act"
+                    }, 
+                    "name": "droping", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "drop_act"
+                    }, 
+                    "name": "dropping2", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "v0.0"
+                        }
+                    }, 
+                    "type": "num_decrement"
+                }, 
+                "name": "decrease"
+            }
+        }, 
+        "in_tbl2": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "stop_recirculate2"
+                    }, 
+                    "name": "stop_eq2", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "stop_recirculate1"
+                    }, 
+                    "name": "stop_eq1", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "v0.0"
+                        }
+                    }, 
+                    "type": "need_recirculate"
+                }, 
+                "name": "default"
+            }
+        }, 
+        "record_flow2": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "stop_flow2"
+                    }, 
+                    "name": "stop_re", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "stop_flow2"
+                    }, 
+                    "name": "stop_re1", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "v0.0"
+                        }
+                    }, 
+                    "type": "record_flow2"
+                }, 
+                "name": "need_re"
+            }
+        }, 
+        "t_do_recirculate": {
+            "default_rule": {
+                "action": {
+                    "type": "do_recirculate"
+                }, 
+                "name": "do"
+            }
+        }, 
+        "record_flow1": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "stop_flow1"
+                    }, 
+                    "name": "stop_re", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "stop_flow1"
+                    }, 
+                    "name": "stop_re2", 
+                    "match": {
+                        "num_metadata.cur_num": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "v0.0"
+                        }
+                    }, 
+                    "type": "record_flow1"
+                }, 
+                "name": "need_re"
+            }
+        }, 
+        "nor_tbl": {
+            "rules": [
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.0"
+                            }
+                        }, 
+                        "type": "forward"
+                    }, 
+                    "name": "fwd", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "p1"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "p1"
+                            }
+                        }, 
+                        "type": "forward"
+                    }, 
+                    "name": "re_fwd", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.0"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
