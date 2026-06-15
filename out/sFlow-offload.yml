@@ -216,7 +216,7 @@
     pragmas :
         - "netro no_lookup_caching"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 405
+    src_lineno : 504
 
 "eth_parse" :
     type : parse_state
@@ -225,7 +225,7 @@
     select_value :
         - "eth.etype"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 410
+    src_lineno : 509
 
 "parse_ipv4" :
     type : parse_state
@@ -234,7 +234,7 @@
     select_value :
         - "ipv4.protocol"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 422
+    src_lineno : 521
 
 "parse_udp" :
     type : parse_state
@@ -243,7 +243,7 @@
     select_value :
         - "udp.dport"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 434
+    src_lineno : 533
 
 "parse_sflow_header" :
     type : parse_state
@@ -254,7 +254,7 @@
     select_value :
         - "num_metadata.cur_num"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 447
+    src_lineno : 546
 
 "parse_sflow_sample_header" :
     type : parse_state
@@ -263,7 +263,7 @@
     select_value :
         - "sflow_sample_header.sample_type"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 459
+    src_lineno : 558
 
 "parse_sflow_counter" :
     type : parse_state
@@ -272,14 +272,14 @@
     select_value :
         - "num_metadata.cur_num"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 470
+    src_lineno : 569
 
 "parse_sflow_counter_2" :
     type : parse_state
     extracts :
         - "sflow_counter2"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 481
+    src_lineno : 580
 
 "parse_sflow_sample" :
     type : parse_state
@@ -288,14 +288,14 @@
     select_value :
         - "num_metadata.cur_num"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 487
+    src_lineno : 586
 
 "parse_sflow_sample_2" :
     type : parse_state
     extracts :
         - "sflow_sample2"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 498
+    src_lineno : 597
 
 ##########################################
 # Parser                                 #
@@ -354,7 +354,7 @@ parser :
 "num_decrement" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 587
+    src_lineno : 686
     parameter_list :
         - "espec" : 16
     implementation : >-
@@ -364,7 +364,7 @@ parser :
 "fdo_recirculate" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 616
+    src_lineno : 715
     implementation : >-
         remove_header(sflow_sample_header);
         remove_header(sflow_sample);
@@ -374,7 +374,7 @@ parser :
 "need_recirculate" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 558
+    src_lineno : 657
     parameter_list :
         - "espec" : 16
     implementation : >-
@@ -387,7 +387,7 @@ parser :
 "do_recirculate" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 579
+    src_lineno : 678
     implementation : >-
         remove_header(sflow_sample_header);
         remove_header(sflow_counter);
@@ -397,7 +397,7 @@ parser :
 "frecord2nd" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 523
+    src_lineno : 622
     implementation : >-
         update_frame2();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -405,14 +405,14 @@ parser :
 "drop_act" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 508
+    src_lineno : 607
     implementation : >-
         drop();
 
 "counter_record2" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 550
+    src_lineno : 649
     implementation : >-
         update_counter2();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -420,7 +420,7 @@ parser :
 "stop_recirculate2" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 566
+    src_lineno : 665
     implementation : >-
         update_counter();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -431,7 +431,7 @@ parser :
 "stop_recirculate1" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 573
+    src_lineno : 672
     implementation : >-
         update_counter();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -441,7 +441,7 @@ parser :
     name : "record_flow1"
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 592
+    src_lineno : 691
     parameter_list :
         - "espec" : 16
     implementation : >-
@@ -452,7 +452,7 @@ parser :
 "forward" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 536
+    src_lineno : 635
     parameter_list :
         - "espec" : 16
     implementation : >-
@@ -462,7 +462,7 @@ parser :
     name : "record_flow2"
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 598
+    src_lineno : 697
     parameter_list :
         - "espec" : 16
     implementation : >-
@@ -473,7 +473,7 @@ parser :
 "stop_flow2" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 610
+    src_lineno : 709
     implementation : >-
         update_frame2();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -482,7 +482,7 @@ parser :
 "stop_flow1" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 604
+    src_lineno : 703
     implementation : >-
         update_frame();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -490,7 +490,7 @@ parser :
 "frecord1st" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 513
+    src_lineno : 612
     implementation : >-
         update_frame();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -498,7 +498,7 @@ parser :
 "counter_record" :
     type : action
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 542
+    src_lineno : 641
     implementation : >-
         update_counter();
         subtract_from_field(sflow_header.num_samples, 0x1);
@@ -512,7 +512,14 @@ parser :
     allowed_actions : 
         - "do_recirculate"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 708
+    src_lineno : 807
+
+"t_do_frecirculate":
+    type : table
+    allowed_actions : 
+        - "fdo_recirculate"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 811
 
 "nor_tbl":
     type : table
@@ -522,34 +529,7 @@ parser :
         - "forward"
         - "drop_act"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 695
-
-"t_do_frecirculate":
-    type : table
-    allowed_actions : 
-        - "fdo_recirculate"
-    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 712
-
-"no_record_flow1":
-    type : table
-    match_on : 
-        "num_metadata.cur_num" : "exact"
-    allowed_actions : 
-        - "num_decrement"
-        - "drop_act"
-    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 628
-
-"record_flow2":
-    type : table
-    match_on : 
-        "num_metadata.cur_num" : "exact"
-    allowed_actions : 
-        - "record_flow2"
-        - "stop_flow2"
-    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 668
+    src_lineno : 794
 
 "in_tbl2":
     type : table
@@ -560,17 +540,17 @@ parser :
         - "stop_recirculate2"
         - "stop_recirculate1"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 681
+    src_lineno : 780
 
-"no_record_flow2":
+"record_flow2":
     type : table
     match_on : 
         "num_metadata.cur_num" : "exact"
     allowed_actions : 
-        - "num_decrement"
-        - "drop_act"
+        - "record_flow2"
+        - "stop_flow2"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 642
+    src_lineno : 767
 
 "record_flow1":
     type : table
@@ -580,7 +560,27 @@ parser :
         - "record_flow1"
         - "stop_flow1"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 655
+    src_lineno : 754
+
+"no_record_flow2":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "num_decrement"
+        - "drop_act"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 741
+
+"no_record_flow1":
+    type : table
+    match_on : 
+        "num_metadata.cur_num" : "exact"
+    allowed_actions : 
+        - "num_decrement"
+        - "drop_act"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 727
 
 ##########################################
 # Ingress conditionals sets              #
@@ -598,7 +598,7 @@ parser :
     format : bracketed_expr
     condition : "valid(sflow_counter)"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 725
+    src_lineno : 824
 
 "_condition_2":
     type : conditional
@@ -619,14 +619,21 @@ parser :
     format : bracketed_expr
     condition : "valid(sflow_sample2)"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 738
+    src_lineno : 837
 
 "_condition_3":
     type : conditional
     format : bracketed_expr
     condition : "valid(sflow_sample)"
     src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
-    src_lineno : 732
+    src_lineno : 831
+
+"_condition_6":
+    type : conditional
+    format : bracketed_expr
+    condition : "(valid(udp)) and (((udp.dport) == (67)) or ((udp.dport) == (68)))"
+    src_filename : 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'
+    src_lineno : 0
 
 ##########################################
 # Ingress control flow                   #
@@ -639,7 +646,7 @@ ingress_flow:
     start_state : "_condition_0"
     implementation : >-
         digraph {
-            _condition_0 -> nor_tbl [condition = false]
+            _condition_0 -> _condition_6 [condition = false]
             _condition_0 -> _condition_1 [condition = true]
             _condition_1 -> _condition_2 [condition = false]
             _condition_1 -> in_tbl2 [condition = true]
@@ -656,6 +663,8 @@ ingress_flow:
             _condition_3 -> exit_control_flow [condition = false]
             _condition_3 -> no_record_flow1 [condition = true]
             no_record_flow1 -> _condition_4 [action = always]
+            _condition_6 -> nor_tbl [condition = false]
+            _condition_6 -> exit_control_flow [condition = true]
             nor_tbl -> exit_control_flow [action = always]
         }
 
@@ -663,22 +672,22 @@ ingress_flow:
 # Egress conditionals sets               #
 ##########################################
 
-"_condition_6":
+"_condition_7":
     type : conditional
     format : bracketed_expr
     condition : "valid(sflow_counter)"
 
-"_condition_7":
+"_condition_8":
     type : conditional
     format : bracketed_expr
     condition : "(num_metadata.cur_num) > (2)"
 
-"_condition_8":
+"_condition_9":
     type : conditional
     format : bracketed_expr
     condition : "valid(sflow_sample)"
 
-"_condition_9":
+"_condition_10":
     type : conditional
     format : bracketed_expr
     condition : "(num_metadata.cur_num) > (2)"
@@ -691,19 +700,19 @@ egress_flow:
     type : control_flow
     doc : "control flow for egress"
     format : dot
-    start_state : "_condition_6"
+    start_state : "_condition_7"
     implementation : >-
         digraph {
-            _condition_6 -> _condition_8 [condition = false]
-            _condition_6 -> _condition_7 [condition = true]
-            _condition_7 -> exit_control_flow [condition = false]
-            _condition_7 -> t_do_recirculate [condition = true]
-            t_do_recirculate -> exit_control_flow [action = do_recirculate]
-            t_do_recirculate -> _condition_8 [action = default]
+            _condition_7 -> _condition_9 [condition = false]
+            _condition_7 -> _condition_8 [condition = true]
             _condition_8 -> exit_control_flow [condition = false]
-            _condition_8 -> _condition_9 [condition = true]
+            _condition_8 -> t_do_recirculate [condition = true]
+            t_do_recirculate -> exit_control_flow [action = do_recirculate]
+            t_do_recirculate -> _condition_9 [action = default]
             _condition_9 -> exit_control_flow [condition = false]
-            _condition_9 -> t_do_frecirculate [condition = true]
+            _condition_9 -> _condition_10 [condition = true]
+            _condition_10 -> exit_control_flow [condition = false]
+            _condition_10 -> t_do_frecirculate [condition = true]
             t_do_frecirculate -> exit_control_flow [action = always]
         }
 
@@ -725,7 +734,7 @@ layout:
 
 source_info :
     type : source_info
-    date : "2026/05/26 08:49:50"
+    date : "2026/06/09 15:15:02"
     p4_version : "1.0"
     source_files : 
         - 'C:\Users\Alen Chen\NFP_SDK\sFlow-offload\sFlow_parser.p4'

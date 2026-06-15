@@ -86,15 +86,14 @@
                     "NUM_IMU=1", 
                     "NUM_EMU=1", 
                     "SIMULATION=0", 
-                    "PIF_APP_REDUCED_THREADS=1", 
-                    "PIF_DEBUG=1"
+                    "PIF_APP_REDUCED_THREADS=1"
                 ], 
                 "rev_max": -1, 
                 "rev_min": 16
             }, 
             "targets": {
                 "": {
-                    "build_required": true, 
+                    "build_required": false, 
                     "input_files": {
                         "ext_obj_files": [], 
                         "obj_files": [], 
@@ -107,14 +106,14 @@
                     "settings": {
                         "additional_options": "", 
                         "all_header_ops": false, 
-                        "debug_info": true, 
-                        "default_table_size": 200, 
+                        "debug_info": false, 
+                        "default_table_size": 6, 
                         "define": [], 
                         "flowcache_enabled": true, 
                         "gro_enabled": true, 
-                        "implicit_header_valid": true, 
+                        "implicit_header_valid": false, 
                         "include_paths": [], 
-                        "mac_ingress_timestamp": false, 
+                        "mac_ingress_timestamp": true, 
                         "mc_init": false, 
                         "multicast_group_count": 0, 
                         "multicast_group_size": 16, 
@@ -180,7 +179,7 @@
                         "command_line": "", 
                         "context_mode": 8, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "PKT_MOD_SCRIPT_INIT_CSR", 
                             "GLOBAL_INIT", 
@@ -223,7 +222,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "BLM_0_ISLAND_48", 
                             "NBII=8", 
@@ -283,7 +282,7 @@
                         "command_line": "", 
                         "context_mode": 8, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "FC_TIMEOUT_EMU=0"
                         ], 
@@ -324,7 +323,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_VERSION=0x03010000", 
                             "NFP_LIB_ANY_NFAS_VERSION", 
@@ -364,7 +363,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_VERSION=0x03010000", 
                             "NFP_LIB_ANY_NFAS_VERSION", 
@@ -404,7 +403,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [], 
                         "edit_override": false, 
                         "first_context": 0, 
@@ -452,7 +451,7 @@
                         "command_line": "", 
                         "context_mode": 4, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_IN_DATA_DMA_ME0=\"__nfp_idstr2meid(\\\"pcie0.me2\\\")\"", 
                             "NFD_IN_DATA_DMA_ME1=\"__nfp_idstr2meid(\\\"pcie0.me3\\\")\"", 
@@ -508,7 +507,7 @@
                         "command_line": "", 
                         "context_mode": 8, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_IN_DATA_DMA_ME0=\"__nfp_idstr2meid(\\\"pcie0.me2\\\")\"", 
                             "NFD_IN_DATA_DMA_ME1=\"__nfp_idstr2meid(\\\"pcie0.me3\\\")\"", 
@@ -564,7 +563,7 @@
                         "command_line": "", 
                         "context_mode": 4, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_IN_NOTIFY_ME=\"__nfp_idstr2meid(\\\"i36.me6\\\")\"", 
                             "PCI_IN_ISSUE_DMA_IDX=0", 
@@ -619,7 +618,7 @@
                         "command_line": "", 
                         "context_mode": 4, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_IN_NOTIFY_ME=\"__nfp_idstr2meid(\\\"i36.me6\\\")\"", 
                             "PCI_IN_ISSUE_DMA_IDX=1", 
@@ -674,7 +673,7 @@
                         "command_line": "", 
                         "context_mode": 8, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_CFG_SIG_NEXT_ME=\"nfd_cfg_sig_sb\"", 
                             "NFD_CFG_NEXT_ME=\"__nfp_idstr2meid(\\\"i36.me8\\\")\"", 
@@ -717,7 +716,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "STAGE_BATCH_MANAGER_CTX=0", 
                             "NFD_OUT_SB_WQ_NUM=15", 
@@ -758,7 +757,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "STAGE_BATCH_MANAGER_CTX=0", 
                             "NFD_OUT_SB_WQ_NUM=15", 
@@ -799,7 +798,7 @@
                         "command_line": "", 
                         "convert_warnings": false, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_CFG_SIG_NEXT_ME=_nfd_cfg_sig_svc_me0", 
                             "PCIE_ISL=0", 
@@ -855,7 +854,7 @@
                         "command_line": "", 
                         "context_mode": 8, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "NFD_CFG_NEXT_ME0=\"__nfp_idstr2meid(\\\"i36.me11\\\")\"", 
                             "NFD_CFG_SIG_NEXT_ME0=\"nfd_cfg_sig_app_master0\"", 
@@ -958,7 +957,7 @@
                         "command_line": "", 
                         "context_mode": 4, 
                         "cycle_utilization": 100, 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "define": [
                             "PIF_APP_MASTER_ME=0x204", 
                             "HASHMAP_CAMPHASH"
@@ -986,12 +985,24 @@
                     "tool": "compiler"
                 }, 
                 ".\\sFlow-offload": {
-                    "build_required": true, 
+                    "build_required": false, 
                     "list_assignments": {
                         "i32.tg0": [
                             "pif_app_nfd.list"
                         ], 
                         "i32.tg1": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i32.tg2": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i32.tg3": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i32.tg4": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i32.tg5": [
                             "pif_app_nfd.list"
                         ], 
                         "i33.tg0": [
@@ -1000,16 +1011,52 @@
                         "i33.tg1": [
                             "pif_app_nfd.list"
                         ], 
+                        "i33.tg2": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i33.tg3": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i33.tg4": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i33.tg5": [
+                            "pif_app_nfd.list"
+                        ], 
                         "i34.tg0": [
                             "pif_app_nfd.list"
                         ], 
                         "i34.tg1": [
                             "pif_app_nfd.list"
                         ], 
+                        "i34.tg2": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i34.tg3": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i34.tg4": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i34.tg5": [
+                            "pif_app_nfd.list"
+                        ], 
                         "i35.tg0": [
                             "pif_app_nfd.list"
                         ], 
                         "i35.tg1": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i35.tg2": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i35.tg3": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i35.tg4": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i35.tg5": [
                             "pif_app_nfd.list"
                         ], 
                         "i36.me10": [
@@ -1034,6 +1081,9 @@
                             "pif_app_nfd.list"
                         ], 
                         "i36.tg1": [
+                            "pif_app_nfd.list"
+                        ], 
+                        "i36.tg2": [
                             "pif_app_nfd.list"
                         ], 
                         "i4.me0": [
@@ -1064,7 +1114,7 @@
                     "settings": {
                         "additional_options": "", 
                         "chip_name": "<unnamed>", 
-                        "debug_info": true, 
+                        "debug_info": false, 
                         "elf_64": true, 
                         "fill": "default", 
                         "fill_enable": false, 
@@ -1082,8 +1132,6 @@
                         "quad_shared_codestores_enabled": false, 
                         "shared_codestores_enabled": false, 
                         "user_note_files": {
-                            "build_info_json": ".\\out\\build_info.json", 
-                            "pif_debug_json": ".\\out\\pif_debug.json", 
                             "pif_design_json": ".\\out\\pif_design.json"
                         }
                     }, 

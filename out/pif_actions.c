@@ -4,6 +4,7 @@
 #include <nfp/mem_ring.h>
 #include <nfp/me.h>
 #include <nfp/cls.h>
+#include "mac_time.h"
 #include "pif_common.h"
 #include "pkt_clone.h"
 
@@ -16,6 +17,7 @@ extern __nnr uint32_t calc_fld_bmsk;
 #define BITRANGE(var, width, offset) \
     (((var) >> (offset)) & ((1 << (width)) - 1))
 
+extern __lmem __shared struct mac_time_state mac_time_state;
 
 /* external action primitive update_counter */
 extern int pif_plugin_update_counter(__lmem uint32_t *parrep, __xread uint32_t *actdatabuf);
@@ -36,31 +38,6 @@ static int pif_action_exec_num_decrement(__lmem uint32_t *_pif_parrep, __xread u
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_standard_metadata *standard_metadata;
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_num_decrement");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_num_decrement");
 #endif
@@ -107,31 +84,6 @@ static int pif_action_exec_need_recirculate(__lmem uint32_t *_pif_parrep, __xrea
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_standard_metadata *standard_metadata;
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_need_recirculate");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_need_recirculate");
 #endif
@@ -209,37 +161,11 @@ static int pif_action_exec_need_recirculate(__lmem uint32_t *_pif_parrep, __xrea
 static int pif_action_exec_do_recirculate(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_do_recirculate *_pif_act_data = (__xread struct pif_action_actiondata_do_recirculate *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_sample_header *sflow_sample_header;
     __lmem struct pif_header_recirculate_fl *recirculate_fl;
     __lmem struct pif_header_sflow_counter2 *sflow_counter2;
     __lmem struct pif_header_sflow_counter *sflow_counter;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_do_recirculate");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_do_recirculate");
 #endif
@@ -300,33 +226,7 @@ static int pif_action_exec_do_recirculate(__lmem uint32_t *_pif_parrep, __xread 
 static int pif_action_exec_drop_act(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_drop_act *_pif_act_data = (__xread struct pif_action_actiondata_drop_act *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_drop_act");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_drop_act");
 #endif
@@ -344,34 +244,8 @@ static int pif_action_exec_drop_act(__lmem uint32_t *_pif_parrep, __xread uint32
 static int pif_action_exec_stop_recirculate2(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_stop_recirculate2 *_pif_act_data = (__xread struct pif_action_actiondata_stop_recirculate2 *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_stop_recirculate2");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_stop_recirculate2");
 #endif
@@ -447,34 +321,8 @@ static int pif_action_exec_stop_recirculate2(__lmem uint32_t *_pif_parrep, __xre
 static int pif_action_exec_stop_recirculate1(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_stop_recirculate1 *_pif_act_data = (__xread struct pif_action_actiondata_stop_recirculate1 *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_stop_recirculate1");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_stop_recirculate1");
 #endif
@@ -527,31 +375,6 @@ static int pif_action_exec_record_flow2(__lmem uint32_t *_pif_parrep, __xread ui
     __lmem struct pif_header_standard_metadata *standard_metadata;
     __lmem struct pif_header_sflow_header *sflow_header;
 #ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_record_flow2");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
-#ifdef PIF_DEBUG
     __debug_label("pif_action_state_record_flow2");
 #endif
 
@@ -600,34 +423,8 @@ static int pif_action_exec_record_flow2(__lmem uint32_t *_pif_parrep, __xread ui
 static int pif_action_exec_stop_flow1(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_stop_flow1 *_pif_act_data = (__xread struct pif_action_actiondata_stop_flow1 *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_stop_flow1");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_stop_flow1");
 #endif
@@ -673,31 +470,6 @@ static int pif_action_exec_record_flow1(__lmem uint32_t *_pif_parrep, __xread ui
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_standard_metadata *standard_metadata;
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_record_flow1");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_record_flow1");
 #endif
@@ -751,31 +523,6 @@ static int pif_action_exec_forward(__lmem uint32_t *_pif_parrep, __xread uint32_
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_standard_metadata *standard_metadata;
 #ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_forward");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
-#ifdef PIF_DEBUG
     __debug_label("pif_action_state_forward");
 #endif
 
@@ -794,34 +541,8 @@ static int pif_action_exec_forward(__lmem uint32_t *_pif_parrep, __xread uint32_
 static int pif_action_exec_stop_flow2(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_stop_flow2 *_pif_act_data = (__xread struct pif_action_actiondata_stop_flow2 *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_header *sflow_header;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_stop_flow2");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_stop_flow2");
 #endif
@@ -869,37 +590,11 @@ static int pif_action_exec_stop_flow2(__lmem uint32_t *_pif_parrep, __xread uint
 static int pif_action_exec_fdo_recirculate(__lmem uint32_t *_pif_parrep, __xread uint32_t *_pif_actdatabuf, unsigned _pif_debug)
 {
     int _pif_return = PIF_RETURN_FORWARD;
-    __xread struct pif_action_actiondata_fdo_recirculate *_pif_act_data = (__xread struct pif_action_actiondata_fdo_recirculate *)_pif_actdatabuf;
     __lmem struct pif_parrep_ctldata *_pif_ctldata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
     __lmem struct pif_header_sflow_sample *sflow_sample;
     __lmem struct pif_header_sflow_sample2 *sflow_sample2;
     __lmem struct pif_header_sflow_sample_header *sflow_sample_header;
     __lmem struct pif_header_recirculate_fl *recirculate_fl;
-#ifdef PIF_DEBUG
-    if (_pif_debug & PIF_ACTION_OPDATA_DBGFLAG_BREAK) {
-        /* copy the table number and rule number into mailboxes */
-        unsigned int temp0, temp1;
-        temp0 = local_csr_read(local_csr_mailbox_2);
-        temp1 = local_csr_read(local_csr_mailbox_3);
-        local_csr_write(local_csr_mailbox_2, _pif_act_data->__pif_rule_no);
-        local_csr_write(local_csr_mailbox_3, _pif_act_data->__pif_table_no);
-#if SIMULATION == 1
-        __asm { /* add nops so mailboxes have time to propagate */
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        nop;
-        }
-#endif
-        __debug_label("pif_table_hit_fdo_recirculate");
-        local_csr_write(local_csr_mailbox_2, temp0);
-        local_csr_write(local_csr_mailbox_3, temp1);
-    }
-#endif
 #ifdef PIF_DEBUG
     __debug_label("pif_action_state_fdo_recirculate");
 #endif

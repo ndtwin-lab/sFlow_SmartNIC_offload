@@ -24,73 +24,28 @@
 /* Match action data structure */
 
 __packed struct pif_action_actiondata_num_decrement {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
     uint8_t __pif_padding[2]; /* padding */
     uint16_t espec;
 };
 
 __packed struct pif_action_actiondata_need_recirculate {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
     uint8_t __pif_padding[2]; /* padding */
     uint16_t espec;
-};
-
-__packed struct pif_action_actiondata_do_recirculate {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
-};
-
-__packed struct pif_action_actiondata_drop_act {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
-};
-
-__packed struct pif_action_actiondata_stop_recirculate2 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
-};
-
-__packed struct pif_action_actiondata_stop_recirculate1 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
 };
 
 __packed struct pif_action_actiondata_record_flow2 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
     uint8_t __pif_padding[2]; /* padding */
     uint16_t espec;
 };
 
-__packed struct pif_action_actiondata_stop_flow1 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
-};
-
 __packed struct pif_action_actiondata_record_flow1 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
     uint8_t __pif_padding[2]; /* padding */
     uint16_t espec;
 };
 
 __packed struct pif_action_actiondata_forward {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
     uint8_t __pif_padding[2]; /* padding */
     uint16_t espec;
-};
-
-__packed struct pif_action_actiondata_stop_flow2 {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
-};
-
-__packed struct pif_action_actiondata_fdo_recirculate {
-    uint32_t __pif_rule_no;
-    uint32_t __pif_table_no;
 };
 
 #endif /* __PIF_ACTIONS_H__ */

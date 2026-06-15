@@ -6,112 +6,112 @@
                     "debug_state_value": 50331648, 
                     "label": "pif_action_state_num_decrement", 
                     "live_ranges": null, 
-                    "lineno": 587, 
+                    "lineno": 686, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "need_recirculate": {
                     "debug_state_value": 50331649, 
                     "label": "pif_action_state_need_recirculate", 
                     "live_ranges": null, 
-                    "lineno": 558, 
+                    "lineno": 657, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "do_recirculate": {
                     "debug_state_value": 50331650, 
                     "label": "pif_action_state_do_recirculate", 
                     "live_ranges": null, 
-                    "lineno": 579, 
+                    "lineno": 678, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "frecord2nd": {
                     "debug_state_value": 0, 
                     "label": "pif_action_state_frecord2nd", 
                     "live_ranges": null, 
-                    "lineno": 523, 
+                    "lineno": 622, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "drop_act": {
                     "debug_state_value": 50331651, 
                     "label": "pif_action_state_drop_act", 
                     "live_ranges": null, 
-                    "lineno": 508, 
+                    "lineno": 607, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "counter_record2": {
                     "debug_state_value": 0, 
                     "label": "pif_action_state_counter_record2", 
                     "live_ranges": null, 
-                    "lineno": 550, 
+                    "lineno": 649, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "stop_recirculate2": {
                     "debug_state_value": 50331652, 
                     "label": "pif_action_state_stop_recirculate2", 
                     "live_ranges": null, 
-                    "lineno": 566, 
+                    "lineno": 665, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "stop_recirculate1": {
                     "debug_state_value": 50331653, 
                     "label": "pif_action_state_stop_recirculate1", 
                     "live_ranges": null, 
-                    "lineno": 573, 
+                    "lineno": 672, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "record_flow2": {
                     "debug_state_value": 50331654, 
                     "label": "pif_action_state_record_flow2", 
                     "live_ranges": null, 
-                    "lineno": 598, 
+                    "lineno": 697, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "stop_flow1": {
                     "debug_state_value": 50331655, 
                     "label": "pif_action_state_stop_flow1", 
                     "live_ranges": null, 
-                    "lineno": 604, 
+                    "lineno": 703, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "record_flow1": {
                     "debug_state_value": 50331656, 
                     "label": "pif_action_state_record_flow1", 
                     "live_ranges": null, 
-                    "lineno": 592, 
+                    "lineno": 691, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "forward": {
                     "debug_state_value": 50331657, 
                     "label": "pif_action_state_forward", 
                     "live_ranges": null, 
-                    "lineno": 536, 
+                    "lineno": 635, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "stop_flow2": {
                     "debug_state_value": 50331658, 
                     "label": "pif_action_state_stop_flow2", 
                     "live_ranges": null, 
-                    "lineno": 610, 
+                    "lineno": 709, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "fdo_recirculate": {
                     "debug_state_value": 50331659, 
                     "label": "pif_action_state_fdo_recirculate", 
                     "live_ranges": null, 
-                    "lineno": 616, 
+                    "lineno": 715, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "frecord1st": {
                     "debug_state_value": 0, 
                     "label": "pif_action_state_frecord1st", 
                     "live_ranges": null, 
-                    "lineno": 513, 
+                    "lineno": 612, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "counter_record": {
                     "debug_state_value": 0, 
                     "label": "pif_action_state_counter_record", 
                     "live_ranges": null, 
-                    "lineno": 542, 
+                    "lineno": 641, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }
             }
@@ -120,21 +120,21 @@
             "egress_flow": {
                 "node_source_map": {
                     "_condition_7": {
-                        "debug_state_value": 33619971, 
+                        "debug_state_value": 33619970, 
                         "label": "pif_ctlflow_state_egress_flow__condition_7", 
                         "live_ranges": null, 
                         "lineno": null, 
                         "filename": null
                     }, 
-                    "_condition_6": {
-                        "debug_state_value": 33619973, 
-                        "label": "pif_ctlflow_state_egress_flow__condition_6", 
+                    "_condition_10": {
+                        "debug_state_value": 33619969, 
+                        "label": "pif_ctlflow_state_egress_flow__condition_10", 
                         "live_ranges": null, 
                         "lineno": null, 
                         "filename": null
                     }, 
                     "_condition_9": {
-                        "debug_state_value": 33619969, 
+                        "debug_state_value": 33619971, 
                         "label": "pif_ctlflow_state_egress_flow__condition_9", 
                         "live_ranges": null, 
                         "lineno": null, 
@@ -148,42 +148,42 @@
                         "filename": null
                     }, 
                     "t_do_frecirculate": {
-                        "debug_state_value": 33619970, 
+                        "debug_state_value": 33619973, 
                         "label": "pif_ctlflow_state_egress_flow_t_do_frecirculate", 
                         "live_ranges": null, 
-                        "lineno": 712, 
+                        "lineno": 811, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "t_do_recirculate": {
                         "debug_state_value": 33619972, 
                         "label": "pif_ctlflow_state_egress_flow_t_do_recirculate", 
                         "live_ranges": null, 
-                        "lineno": 708, 
+                        "lineno": 807, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }
                 }
             }, 
             "ingress_flow": {
                 "node_source_map": {
-                    "_condition_5": {
-                        "debug_state_value": 33554440, 
-                        "label": "pif_ctlflow_state_ingress_flow__condition_5", 
-                        "live_ranges": null, 
-                        "lineno": 738, 
-                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
-                    }, 
-                    "_condition_4": {
-                        "debug_state_value": 33554433, 
-                        "label": "pif_ctlflow_state_ingress_flow__condition_4", 
+                    "_condition_6": {
+                        "debug_state_value": 33554438, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_6", 
                         "live_ranges": null, 
                         "lineno": 0, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
+                    "_condition_5": {
+                        "debug_state_value": 33554441, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_5", 
+                        "live_ranges": null, 
+                        "lineno": 837, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "_condition_3": {
                         "debug_state_value": 33554435, 
                         "label": "pif_ctlflow_state_ingress_flow__condition_3", 
                         "live_ranges": null, 
-                        "lineno": 732, 
+                        "lineno": 831, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "_condition_2": {
@@ -197,142 +197,65 @@
                         "debug_state_value": 33554436, 
                         "label": "pif_ctlflow_state_ingress_flow__condition_1", 
                         "live_ranges": null, 
-                        "lineno": 725, 
+                        "lineno": 824, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "_condition_0": {
-                        "debug_state_value": 33554439, 
+                        "debug_state_value": 33554440, 
                         "label": "pif_ctlflow_state_ingress_flow__condition_0", 
                         "live_ranges": null, 
                         "lineno": 0, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
+                    "_condition_4": {
+                        "debug_state_value": 33554433, 
+                        "label": "pif_ctlflow_state_ingress_flow__condition_4", 
+                        "live_ranges": null, 
+                        "lineno": 0, 
+                        "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
+                    }, 
                     "no_record_flow1": {
-                        "debug_state_value": 33554438, 
+                        "debug_state_value": 33554439, 
                         "label": "pif_ctlflow_state_ingress_flow_no_record_flow1", 
                         "live_ranges": null, 
-                        "lineno": 628, 
+                        "lineno": 727, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "no_record_flow2": {
-                        "debug_state_value": 33554441, 
+                        "debug_state_value": 33554442, 
                         "label": "pif_ctlflow_state_ingress_flow_no_record_flow2", 
                         "live_ranges": null, 
-                        "lineno": 642, 
+                        "lineno": 741, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "in_tbl2": {
                         "debug_state_value": 33554437, 
                         "label": "pif_ctlflow_state_ingress_flow_in_tbl2", 
                         "live_ranges": null, 
-                        "lineno": 681, 
+                        "lineno": 780, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "record_flow2": {
-                        "debug_state_value": 33554442, 
+                        "debug_state_value": 33554443, 
                         "label": "pif_ctlflow_state_ingress_flow_record_flow2", 
                         "live_ranges": null, 
-                        "lineno": 668, 
+                        "lineno": 767, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "record_flow1": {
                         "debug_state_value": 33554432, 
                         "label": "pif_ctlflow_state_ingress_flow_record_flow1", 
                         "live_ranges": null, 
-                        "lineno": 655, 
+                        "lineno": 754, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }, 
                     "nor_tbl": {
-                        "debug_state_value": 33554443, 
+                        "debug_state_value": 33554444, 
                         "label": "pif_ctlflow_state_ingress_flow_nor_tbl", 
                         "live_ranges": null, 
-                        "lineno": 695, 
+                        "lineno": 794, 
                         "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                     }
-                }
-            }
-        }, 
-        "table_hit": {
-            "node_source_map": {
-                "num_decrement": {
-                    "label": "pif_table_hit_num_decrement", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "need_recirculate": {
-                    "label": "pif_table_hit_need_recirculate", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "do_recirculate": {
-                    "label": "pif_table_hit_do_recirculate", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "frecord2nd": {
-                    "label": "pif_table_hit_frecord2nd", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "drop_act": {
-                    "label": "pif_table_hit_drop_act", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "counter_record2": {
-                    "label": "pif_table_hit_counter_record2", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "stop_recirculate2": {
-                    "label": "pif_table_hit_stop_recirculate2", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "stop_recirculate1": {
-                    "label": "pif_table_hit_stop_recirculate1", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "record_flow2": {
-                    "label": "pif_table_hit_record_flow2", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "stop_flow1": {
-                    "label": "pif_table_hit_stop_flow1", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "record_flow1": {
-                    "label": "pif_table_hit_record_flow1", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "forward": {
-                    "label": "pif_table_hit_forward", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "stop_flow2": {
-                    "label": "pif_table_hit_stop_flow2", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "fdo_recirculate": {
-                    "label": "pif_table_hit_fdo_recirculate", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "frecord1st": {
-                    "label": "pif_table_hit_frecord1st", 
-                    "lineno": null, 
-                    "filename": null
-                }, 
-                "counter_record": {
-                    "label": "pif_table_hit_counter_record", 
-                    "lineno": null, 
-                    "filename": null
                 }
             }
         }, 
@@ -342,70 +265,70 @@
                     "debug_state_value": 16777217, 
                     "label": "pif_parrep_state_eth_parse", 
                     "live_ranges": null, 
-                    "lineno": 410, 
+                    "lineno": 509, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_counter": {
                     "debug_state_value": 16777222, 
                     "label": "pif_parrep_state_parse_sflow_counter", 
                     "live_ranges": null, 
-                    "lineno": 470, 
+                    "lineno": 569, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_udp": {
                     "debug_state_value": 16777219, 
                     "label": "pif_parrep_state_parse_udp", 
                     "live_ranges": null, 
-                    "lineno": 434, 
+                    "lineno": 533, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_header": {
                     "debug_state_value": 16777220, 
                     "label": "pif_parrep_state_parse_sflow_header", 
                     "live_ranges": null, 
-                    "lineno": 447, 
+                    "lineno": 546, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_counter_2": {
                     "debug_state_value": 16777224, 
                     "label": "pif_parrep_state_parse_sflow_counter_2", 
                     "live_ranges": null, 
-                    "lineno": 481, 
+                    "lineno": 580, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "start": {
                     "debug_state_value": 16777216, 
                     "label": "pif_parrep_state_start", 
                     "live_ranges": null, 
-                    "lineno": 405, 
+                    "lineno": 504, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_sample_2": {
                     "debug_state_value": 16777225, 
                     "label": "pif_parrep_state_parse_sflow_sample_2", 
                     "live_ranges": null, 
-                    "lineno": 498, 
+                    "lineno": 597, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_sample_header": {
                     "debug_state_value": 16777221, 
                     "label": "pif_parrep_state_parse_sflow_sample_header", 
                     "live_ranges": null, 
-                    "lineno": 459, 
+                    "lineno": 558, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_sflow_sample": {
                     "debug_state_value": 16777223, 
                     "label": "pif_parrep_state_parse_sflow_sample", 
                     "live_ranges": null, 
-                    "lineno": 487, 
+                    "lineno": 586, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }, 
                 "parse_ipv4": {
                     "debug_state_value": 16777218, 
                     "label": "pif_parrep_state_parse_ipv4", 
                     "live_ranges": null, 
-                    "lineno": 422, 
+                    "lineno": 521, 
                     "filename": "C:\\Users\\Alen Chen\\NFP_SDK\\sFlow-offload\\sFlow_parser.p4"
                 }
             }

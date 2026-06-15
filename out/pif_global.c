@@ -3,10 +3,13 @@
 #include <stdint.h>
 #include <nfp/me.h>
 #include <nfp/mem_bulk.h>
+#include "mac_time.h"
 #include "pif_common.h"
 #include "port_config.h"
 
 #define PIF_EGRESS_DROP 0xffff
+__lmem __shared static unsigned last_mac_time_update = 0;
+__lmem __shared struct mac_time_state mac_time_state;
 extern __forceinline void pif_global_metadata_init(__lmem uint32_t *parrep)
 {
     __lmem struct pif_header_recirculate_fl *recirculate_fl = (__lmem struct pif_header_recirculate_fl *)(parrep + PIF_PARREP_recirculate_fl_OFF_LW);

@@ -20,12 +20,13 @@
 #define PIF_CTLFLOW_STATE_ingress_flow__condition_3 3
 #define PIF_CTLFLOW_STATE_ingress_flow__condition_1 4
 #define PIF_CTLFLOW_STATE_ingress_flow_in_tbl2 5
-#define PIF_CTLFLOW_STATE_ingress_flow_no_record_flow1 6
-#define PIF_CTLFLOW_STATE_ingress_flow__condition_0 7
-#define PIF_CTLFLOW_STATE_ingress_flow__condition_5 8
-#define PIF_CTLFLOW_STATE_ingress_flow_no_record_flow2 9
-#define PIF_CTLFLOW_STATE_ingress_flow_record_flow2 10
-#define PIF_CTLFLOW_STATE_ingress_flow_nor_tbl 11
+#define PIF_CTLFLOW_STATE_ingress_flow__condition_6 6
+#define PIF_CTLFLOW_STATE_ingress_flow_no_record_flow1 7
+#define PIF_CTLFLOW_STATE_ingress_flow__condition_0 8
+#define PIF_CTLFLOW_STATE_ingress_flow__condition_5 9
+#define PIF_CTLFLOW_STATE_ingress_flow_no_record_flow2 10
+#define PIF_CTLFLOW_STATE_ingress_flow_record_flow2 11
+#define PIF_CTLFLOW_STATE_ingress_flow_nor_tbl 12
 
 /* Control state nodes for egress_flow */
 #define PIF_CTLFLOW_STATE_egress_flow_DONE -1
@@ -33,11 +34,11 @@
 #define PIF_CTLFLOW_STATE_egress_flow 0
 
 #define PIF_CTLFLOW_STATE_egress_flow__condition_8 0
-#define PIF_CTLFLOW_STATE_egress_flow__condition_9 1
-#define PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate 2
-#define PIF_CTLFLOW_STATE_egress_flow__condition_7 3
+#define PIF_CTLFLOW_STATE_egress_flow__condition_10 1
+#define PIF_CTLFLOW_STATE_egress_flow__condition_7 2
+#define PIF_CTLFLOW_STATE_egress_flow__condition_9 3
 #define PIF_CTLFLOW_STATE_egress_flow_t_do_recirculate 4
-#define PIF_CTLFLOW_STATE_egress_flow__condition_6 5
+#define PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate 5
 
 /* Unified control state numbers */
 #define PIF_CTLFLOW_STATE_record_flow1 0
@@ -46,18 +47,19 @@
 #define PIF_CTLFLOW_STATE__condition_3 3
 #define PIF_CTLFLOW_STATE__condition_1 4
 #define PIF_CTLFLOW_STATE_in_tbl2 5
-#define PIF_CTLFLOW_STATE_no_record_flow1 6
-#define PIF_CTLFLOW_STATE__condition_0 7
-#define PIF_CTLFLOW_STATE__condition_5 8
-#define PIF_CTLFLOW_STATE_no_record_flow2 9
-#define PIF_CTLFLOW_STATE_record_flow2 10
-#define PIF_CTLFLOW_STATE_nor_tbl 11
-#define PIF_CTLFLOW_STATE__condition_8 12
-#define PIF_CTLFLOW_STATE__condition_9 13
-#define PIF_CTLFLOW_STATE_t_do_frecirculate 14
+#define PIF_CTLFLOW_STATE__condition_6 6
+#define PIF_CTLFLOW_STATE_no_record_flow1 7
+#define PIF_CTLFLOW_STATE__condition_0 8
+#define PIF_CTLFLOW_STATE__condition_5 9
+#define PIF_CTLFLOW_STATE_no_record_flow2 10
+#define PIF_CTLFLOW_STATE_record_flow2 11
+#define PIF_CTLFLOW_STATE_nor_tbl 12
+#define PIF_CTLFLOW_STATE__condition_8 13
+#define PIF_CTLFLOW_STATE__condition_10 14
 #define PIF_CTLFLOW_STATE__condition_7 15
-#define PIF_CTLFLOW_STATE_t_do_recirculate 16
-#define PIF_CTLFLOW_STATE__condition_6 17
+#define PIF_CTLFLOW_STATE__condition_9 16
+#define PIF_CTLFLOW_STATE_t_do_recirculate 17
+#define PIF_CTLFLOW_STATE_t_do_frecirculate 18
 
 /* Control flow entry points  */
 int pif_ctlflow_ingress_flow(int *start_state, __lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off);

@@ -1,10 +1,8 @@
-#include <stdlib.h>
 #include <pif_plugin.h>
 #include <pif_plugin_metadata.h>
 #include <pif_common.h>
 #include <pif_headers.h>
 #include <memory.h>
-#include <string.h>
 #include <stdint.h>
 #include <nfp.h>
 #include <nfp/me.h>
@@ -13,22 +11,23 @@
 #include <nfp/mem_atomic.h>
 #include <pkt/pkt.h>
 
-#define HASH_SIZE2 1024 // can be 16,384, 2^15 so that mod can use "&" .
+#define HASH_SIZE2 2048 // can be 16,384, 2^15 so that mod can use "&" .
 #define NO_ONE_STATE 0x00000000
 #define WRITTEN_STATE 0x00000001
 #define FINISH_STATE 0x00000002
+#define COUNTER_COMPARE_WORDS 8
 // for test > using the below method  to count how many packets and store the val in reg.
 
 struct counter_data
 {
     uint32_t agent_ip : 32;
     uint32_t if_idx : 32;
-    uint32_t in_octets_1 : 32;
     uint32_t in_octets_0 : 32;
-    uint32_t out_octets_1 : 32;
+    uint32_t in_octets_1 : 32;
     uint32_t out_octets_0 : 32;
-    uint32_t if_speed_1 : 32;
+    uint32_t out_octets_1 : 32;
     uint32_t if_speed_0 : 32;
+    uint32_t if_speed_1 : 32;
 };
 
 
@@ -133,7 +132,7 @@ void cstoring_data(uint32_t *_pif_index, __mem struct counter_data *counter)
 
 #define FLOW_LENGTH_OFFSET2 4
 
-uint32_t hash_function2(struct counter_data *cnt)
+uint32_t hash_function2(__mem struct counter_data *cnt)
 {
 
     uint16_t *val = (uint16_t *)cnt;
@@ -161,14 +160,10 @@ int pif_plugin_update_counter2(EXTRACTED_HEADERS_T *headers, MATCH_DATA_T *data)
     uint32_t _pif_index;
     __mem struct counter_data counter;
 
-    // _pif_index = pif_plugin_meta_get__hash_index__val(headers);
     sflow_counter2 = pif_plugin_hdr_get_sflow_counter2(headers);
     sflow_header = pif_plugin_hdr_get_sflow_header(headers);
     counter.agent_ip = PIF_HEADER_GET_sflow_header___agent_ip(sflow_header);
     counter.if_idx = PIF_HEADER_GET_sflow_counter2___g_if(sflow_counter2);
-    // counter.in_octets = ( (uint64_t)PIF_HEADER_GET_sflow_counter2___g_in_octets___1(sflow_counter2) <<32 ) | PIF_HEADER_GET_sflow_counter2___g_in_octets___0(sflow_counter2);
-    // counter.out_octets = ( (uint64_t)PIF_HEADER_GET_sflow_counter2___g_out_octets___1(sflow_counter2) <<32 ) | PIF_HEADER_GET_sflow_counter2___g_out_octets___0(sflow_counter2);
-    // counter.if_speed = ( (uint64_t)PIF_HEADER_GET_sflow_counter2___g_speed___1(sflow_counter2) <<32 ) | PIF_HEADER_GET_sflow_counter2___g_speed___0(sflow_counter2);
     counter.in_octets_0 = PIF_HEADER_GET_sflow_counter2___g_in_octets___0(sflow_counter2);
     counter.in_octets_1 = PIF_HEADER_GET_sflow_counter2___g_in_octets___1(sflow_counter2);
     counter.out_octets_0 = PIF_HEADER_GET_sflow_counter2___g_out_octets___0(sflow_counter2);
@@ -176,7 +171,7 @@ int pif_plugin_update_counter2(EXTRACTED_HEADERS_T *headers, MATCH_DATA_T *data)
     counter.if_speed_0 = PIF_HEADER_GET_sflow_counter2___g_speed___0(sflow_counter2);
     counter.if_speed_1 = PIF_HEADER_GET_sflow_counter2___g_speed___1(sflow_counter2);
 
-    _pif_index = counter.agent_ip % HASH_SIZE2; // can use more complex hash function, and also can use the hash value calculated in the parser.
+    _pif_index = hash_function2(&counter) % HASH_SIZE2;//counter.agent_ip % HASH_SIZE2; // can use more complex hash function, and also can use the hash value calculated in the parser.
     cstoring_data(&_pif_index, &counter);
     return PIF_PLUGIN_RETURN_FORWARD;
 }
@@ -187,15 +182,11 @@ int pif_plugin_update_counter(EXTRACTED_HEADERS_T *headers, MATCH_DATA_T *data)
     PIF_PLUGIN_sflow_header_T *sflow_header;
     uint32_t _pif_index;
     __mem struct counter_data counter;
-    // _pif_index = pif_plugin_meta_get__hash_index__val(headers);
+
     sflow_counter = pif_plugin_hdr_get_sflow_counter(headers);
     sflow_header = pif_plugin_hdr_get_sflow_header(headers);
     counter.agent_ip = PIF_HEADER_GET_sflow_header___agent_ip(sflow_header);
     counter.if_idx = PIF_HEADER_GET_sflow_counter___g_if(sflow_counter);
-    // counter.in_octets = ( (uint64_t)PIF_HEADER_GET_sflow_counter___g_in_octets___1(sflow_counter) <<32 ) | PIF_HEADER_GET_sflow_counter___g_in_octets___0(sflow_counter);
-    // counter.out_octets = ( (uint64_t)PIF_HEADER_GET_sflow_counter___g_out_octets___1(sflow_counter) <<32 ) | PIF_HEADER_GET_sflow_counter___g_out_octets___0(sflow_counter);
-    // counter.if_speed = ( (uint64_t)PIF_HEADER_GET_sflow_counter___g_speed___1(sflow_counter) <<32 ) | PIF_HEADER_GET_sflow_counter___g_speed___0(sflow_counter);
-
     counter.in_octets_0 = PIF_HEADER_GET_sflow_counter___g_in_octets___0(sflow_counter);
     counter.in_octets_1 = PIF_HEADER_GET_sflow_counter___g_in_octets___1(sflow_counter);
     counter.out_octets_0 = PIF_HEADER_GET_sflow_counter___g_out_octets___0(sflow_counter);
@@ -203,7 +194,7 @@ int pif_plugin_update_counter(EXTRACTED_HEADERS_T *headers, MATCH_DATA_T *data)
     counter.if_speed_0 = PIF_HEADER_GET_sflow_counter___g_speed___0(sflow_counter);
     counter.if_speed_1 = PIF_HEADER_GET_sflow_counter___g_speed___1(sflow_counter);
 
-    _pif_index = counter.agent_ip % HASH_SIZE2; // can use more complex hash function, and also can use the hash value calculated in the parser.
+    _pif_index = hash_function2(&counter) % HASH_SIZE2;//counter.agent_ip % HASH_SIZE2; // can use more complex hash function, and also can use the hash value calculated in the parser.
     cstoring_data(&_pif_index, &counter);
     return PIF_PLUGIN_RETURN_FORWARD;
 

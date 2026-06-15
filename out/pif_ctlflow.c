@@ -235,6 +235,57 @@ static int handle_ingress_flow_in_tbl2(__lmem uint32_t *_pif_parrep, __mem __add
     return 0;
 }
 
+static int handle_ingress_flow__condition_6(__lmem uint32_t *_pif_parrep)
+{
+    unsigned int pif_expression__condition_6_register_4;
+    __lmem struct pif_header_udp *udp;
+    __lmem struct pif_parrep_ctldata *prdata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
+
+#ifdef PIF_DEBUG
+    __debug_label("pif_ctlflow_state_ingress_flow__condition_6");
+#endif
+
+    udp = (__lmem struct pif_header_udp *) (_pif_parrep + PIF_PARREP_udp_OFF_LW);
+
+    //expression _condition_6: (valid(udp)) and (((udp.dport) == (67)) or ((udp.dport) == (68)))
+    {
+    unsigned int pif_expression__condition_6_register_0;
+    unsigned int pif_expression__condition_6_register_1;
+    unsigned int pif_expression__condition_6_register_2;
+    unsigned int pif_expression__condition_6_register_3;
+    unsigned int pif_expression__condition_6_register_5;
+    //subexpression 1: valid(udp)
+    pif_expression__condition_6_register_0 = PIF_PARREP_udp_VALID(prdata);
+    //subexpression 8: 67
+    // constant : 0x43
+
+    //subexpression 3: (udp.dport)==(67)
+    pif_expression__condition_6_register_2 = udp->dport;
+    pif_expression__condition_6_register_3 = 0x43;
+    /* implicit cast 7 -> 16 */
+    pif_expression__condition_6_register_4 = pif_expression__condition_6_register_3 & 0x7f;
+    pif_expression__condition_6_register_1 = (pif_expression__condition_6_register_2 == pif_expression__condition_6_register_4);
+    //subexpression 6: 68
+    // constant : 0x44
+
+    //subexpression 4: (udp.dport)==(68)
+    pif_expression__condition_6_register_2 = udp->dport;
+    pif_expression__condition_6_register_3 = 0x44;
+    /* implicit cast 7 -> 16 */
+    pif_expression__condition_6_register_5 = pif_expression__condition_6_register_3 & 0x7f;
+    pif_expression__condition_6_register_4 = (pif_expression__condition_6_register_2 == pif_expression__condition_6_register_5);
+    //subexpression 2: ((udp.dport)==(67))or((udp.dport)==(68))
+    pif_expression__condition_6_register_5 = pif_expression__condition_6_register_1 || pif_expression__condition_6_register_4;
+    //subexpression 0: (valid(udp))and(((udp.dport)==(67))or((udp.dport)==(68)))
+    pif_expression__condition_6_register_4 = (pif_expression__condition_6_register_0) && (pif_expression__condition_6_register_5);
+    }
+
+    if (pif_expression__condition_6_register_4)
+        return PIF_CTLFLOW_STATE_ingress_flow_exit_control_flow;
+    else
+        return PIF_CTLFLOW_STATE_ingress_flow_nor_tbl;
+}
+
 static int handle_ingress_flow_no_record_flow1(__lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off, int *actlen, int *state)
 {
     __gpr int action_id, ret;
@@ -304,7 +355,7 @@ static int handle_ingress_flow__condition_0(__lmem uint32_t *_pif_parrep)
     if (pif_expression__condition_0_register_4)
         return PIF_CTLFLOW_STATE_ingress_flow__condition_1;
     else
-        return PIF_CTLFLOW_STATE_ingress_flow_nor_tbl;
+        return PIF_CTLFLOW_STATE_ingress_flow__condition_6;
 }
 
 static int handle_ingress_flow__condition_5(__lmem uint32_t *_pif_parrep)
@@ -459,6 +510,9 @@ int pif_ctlflow_ingress_flow(int *start_state, __lmem uint32_t *_pif_parrep, __m
         case PIF_CTLFLOW_STATE_ingress_flow_in_tbl2:
             ret = handle_ingress_flow_in_tbl2(_pif_parrep, actbuf, actbuf_off + totlen, (int *)&actlen, (int *)&pif_ctlflow_state_ingress_flow);
             break;
+        case PIF_CTLFLOW_STATE_ingress_flow__condition_6:
+            pif_ctlflow_state_ingress_flow = handle_ingress_flow__condition_6(_pif_parrep);
+            continue;
         case PIF_CTLFLOW_STATE_ingress_flow_no_record_flow1:
             ret = handle_ingress_flow_no_record_flow1(_pif_parrep, actbuf, actbuf_off + totlen, (int *)&actlen, (int *)&pif_ctlflow_state_ingress_flow);
             break;
@@ -498,55 +552,145 @@ int pif_ctlflow_ingress_flow(int *start_state, __lmem uint32_t *_pif_parrep, __m
 static int handle_egress_flow__condition_8(__lmem uint32_t *_pif_parrep)
 {
     unsigned int pif_expression__condition_8_register_0;
-    __lmem struct pif_parrep_ctldata *prdata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
+    __lmem struct pif_header_num_metadata *num_metadata;
 
 #ifdef PIF_DEBUG
     __debug_label("pif_ctlflow_state_egress_flow__condition_8");
 #endif
 
-    //expression _condition_8: valid(sflow_sample)
+    num_metadata = (__lmem struct pif_header_num_metadata *) (_pif_parrep + PIF_PARREP_num_metadata_OFF_LW);
+
+    //expression _condition_8: (num_metadata.cur_num) > (2)
     {
-    //subexpression 0: valid(sflow_sample)
-    pif_expression__condition_8_register_0 = PIF_PARREP_sflow_sample_VALID(prdata);
+    unsigned int pif_expression__condition_8_register_1;
+    unsigned int pif_expression__condition_8_register_2;
+    unsigned int pif_expression__condition_8_register_3;
+    //subexpression 2: 2
+    // constant : 0x2
+
+    //subexpression 0: (num_metadata.cur_num)>(2)
+    pif_expression__condition_8_register_1 = num_metadata->cur_num;
+    pif_expression__condition_8_register_2 = 0x2;
+    /* implicit cast 2 -> 8 */
+    pif_expression__condition_8_register_3 = pif_expression__condition_8_register_2 & 0x3;
+    pif_expression__condition_8_register_0 = pif_expression__condition_8_register_1 > pif_expression__condition_8_register_3;
     }
 
     if (pif_expression__condition_8_register_0)
-        return PIF_CTLFLOW_STATE_egress_flow__condition_9;
+        return PIF_CTLFLOW_STATE_egress_flow_t_do_recirculate;
     else
         return PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
+}
+
+static int handle_egress_flow__condition_10(__lmem uint32_t *_pif_parrep)
+{
+    unsigned int pif_expression__condition_10_register_0;
+    __lmem struct pif_header_num_metadata *num_metadata;
+
+#ifdef PIF_DEBUG
+    __debug_label("pif_ctlflow_state_egress_flow__condition_10");
+#endif
+
+    num_metadata = (__lmem struct pif_header_num_metadata *) (_pif_parrep + PIF_PARREP_num_metadata_OFF_LW);
+
+    //expression _condition_10: (num_metadata.cur_num) > (2)
+    {
+    unsigned int pif_expression__condition_10_register_1;
+    unsigned int pif_expression__condition_10_register_2;
+    unsigned int pif_expression__condition_10_register_3;
+    //subexpression 2: 2
+    // constant : 0x2
+
+    //subexpression 0: (num_metadata.cur_num)>(2)
+    pif_expression__condition_10_register_1 = num_metadata->cur_num;
+    pif_expression__condition_10_register_2 = 0x2;
+    /* implicit cast 2 -> 8 */
+    pif_expression__condition_10_register_3 = pif_expression__condition_10_register_2 & 0x3;
+    pif_expression__condition_10_register_0 = pif_expression__condition_10_register_1 > pif_expression__condition_10_register_3;
+    }
+
+    if (pif_expression__condition_10_register_0)
+        return PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate;
+    else
+        return PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
+}
+
+static int handle_egress_flow__condition_7(__lmem uint32_t *_pif_parrep)
+{
+    unsigned int pif_expression__condition_7_register_0;
+    __lmem struct pif_parrep_ctldata *prdata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
+
+#ifdef PIF_DEBUG
+    __debug_label("pif_ctlflow_state_egress_flow__condition_7");
+#endif
+
+    //expression _condition_7: valid(sflow_counter)
+    {
+    //subexpression 0: valid(sflow_counter)
+    pif_expression__condition_7_register_0 = PIF_PARREP_sflow_counter_VALID(prdata);
+    }
+
+    if (pif_expression__condition_7_register_0)
+        return PIF_CTLFLOW_STATE_egress_flow__condition_8;
+    else
+        return PIF_CTLFLOW_STATE_egress_flow__condition_9;
 }
 
 static int handle_egress_flow__condition_9(__lmem uint32_t *_pif_parrep)
 {
     unsigned int pif_expression__condition_9_register_0;
-    __lmem struct pif_header_num_metadata *num_metadata;
+    __lmem struct pif_parrep_ctldata *prdata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
 
 #ifdef PIF_DEBUG
     __debug_label("pif_ctlflow_state_egress_flow__condition_9");
 #endif
 
-    num_metadata = (__lmem struct pif_header_num_metadata *) (_pif_parrep + PIF_PARREP_num_metadata_OFF_LW);
-
-    //expression _condition_9: (num_metadata.cur_num) > (2)
+    //expression _condition_9: valid(sflow_sample)
     {
-    unsigned int pif_expression__condition_9_register_1;
-    unsigned int pif_expression__condition_9_register_2;
-    unsigned int pif_expression__condition_9_register_3;
-    //subexpression 2: 2
-    // constant : 0x2
-
-    //subexpression 0: (num_metadata.cur_num)>(2)
-    pif_expression__condition_9_register_1 = num_metadata->cur_num;
-    pif_expression__condition_9_register_2 = 0x2;
-    /* implicit cast 2 -> 8 */
-    pif_expression__condition_9_register_3 = pif_expression__condition_9_register_2 & 0x3;
-    pif_expression__condition_9_register_0 = pif_expression__condition_9_register_1 > pif_expression__condition_9_register_3;
+    //subexpression 0: valid(sflow_sample)
+    pif_expression__condition_9_register_0 = PIF_PARREP_sflow_sample_VALID(prdata);
     }
 
     if (pif_expression__condition_9_register_0)
-        return PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate;
+        return PIF_CTLFLOW_STATE_egress_flow__condition_10;
     else
         return PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
+}
+
+static int handle_egress_flow_t_do_recirculate(__lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off, int *actlen, int *state)
+{
+    __gpr int action_id, ret;
+    int next_state = PIF_CTLFLOW_STATE_egress_flow_DONE;
+
+#ifdef PIF_DEBUG
+    __debug_label("pif_ctlflow_state_egress_flow_t_do_recirculate");
+#endif
+
+    {
+        struct pif_lookup_result result;
+        result = pif_lookup(PIF_TABLE_ID_t_do_recirculate, _pif_parrep, actbuf, actbuf_off);
+        action_id = result.action_id;
+        *actlen = result.action_len;
+    }
+
+    if (action_id == PIF_ACTION_ID_do_recirculate)
+        next_state = PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
+    else /* default */
+        next_state = PIF_CTLFLOW_STATE_egress_flow__condition_9;
+
+    if (*actlen > 0) {
+        __critical_path();
+        ret = pif_action_execute(_pif_parrep, actbuf, actbuf_off, *actlen);
+        if (ret < 0)
+            return ret;
+        __critical_path();
+        if (ret > 0)
+            next_state = PIF_CTLFLOW_STATE_egress_flow_DONE;
+        __critical_path();
+    }
+
+    *state = next_state;
+    return 0;
 }
 
 static int handle_egress_flow_t_do_frecirculate(__lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off, int *actlen, int *state)
@@ -582,103 +726,13 @@ static int handle_egress_flow_t_do_frecirculate(__lmem uint32_t *_pif_parrep, __
     return 0;
 }
 
-static int handle_egress_flow__condition_7(__lmem uint32_t *_pif_parrep)
-{
-    unsigned int pif_expression__condition_7_register_0;
-    __lmem struct pif_header_num_metadata *num_metadata;
-
-#ifdef PIF_DEBUG
-    __debug_label("pif_ctlflow_state_egress_flow__condition_7");
-#endif
-
-    num_metadata = (__lmem struct pif_header_num_metadata *) (_pif_parrep + PIF_PARREP_num_metadata_OFF_LW);
-
-    //expression _condition_7: (num_metadata.cur_num) > (2)
-    {
-    unsigned int pif_expression__condition_7_register_1;
-    unsigned int pif_expression__condition_7_register_2;
-    unsigned int pif_expression__condition_7_register_3;
-    //subexpression 2: 2
-    // constant : 0x2
-
-    //subexpression 0: (num_metadata.cur_num)>(2)
-    pif_expression__condition_7_register_1 = num_metadata->cur_num;
-    pif_expression__condition_7_register_2 = 0x2;
-    /* implicit cast 2 -> 8 */
-    pif_expression__condition_7_register_3 = pif_expression__condition_7_register_2 & 0x3;
-    pif_expression__condition_7_register_0 = pif_expression__condition_7_register_1 > pif_expression__condition_7_register_3;
-    }
-
-    if (pif_expression__condition_7_register_0)
-        return PIF_CTLFLOW_STATE_egress_flow_t_do_recirculate;
-    else
-        return PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
-}
-
-static int handle_egress_flow_t_do_recirculate(__lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off, int *actlen, int *state)
-{
-    __gpr int action_id, ret;
-    int next_state = PIF_CTLFLOW_STATE_egress_flow_DONE;
-
-#ifdef PIF_DEBUG
-    __debug_label("pif_ctlflow_state_egress_flow_t_do_recirculate");
-#endif
-
-    {
-        struct pif_lookup_result result;
-        result = pif_lookup(PIF_TABLE_ID_t_do_recirculate, _pif_parrep, actbuf, actbuf_off);
-        action_id = result.action_id;
-        *actlen = result.action_len;
-    }
-
-    if (action_id == PIF_ACTION_ID_do_recirculate)
-        next_state = PIF_CTLFLOW_STATE_egress_flow_exit_control_flow;
-    else /* default */
-        next_state = PIF_CTLFLOW_STATE_egress_flow__condition_8;
-
-    if (*actlen > 0) {
-        __critical_path();
-        ret = pif_action_execute(_pif_parrep, actbuf, actbuf_off, *actlen);
-        if (ret < 0)
-            return ret;
-        __critical_path();
-        if (ret > 0)
-            next_state = PIF_CTLFLOW_STATE_egress_flow_DONE;
-        __critical_path();
-    }
-
-    *state = next_state;
-    return 0;
-}
-
-static int handle_egress_flow__condition_6(__lmem uint32_t *_pif_parrep)
-{
-    unsigned int pif_expression__condition_6_register_0;
-    __lmem struct pif_parrep_ctldata *prdata = (__lmem struct pif_parrep_ctldata *)(_pif_parrep + PIF_PARREP_CTLDATA_OFF_LW);
-
-#ifdef PIF_DEBUG
-    __debug_label("pif_ctlflow_state_egress_flow__condition_6");
-#endif
-
-    //expression _condition_6: valid(sflow_counter)
-    {
-    //subexpression 0: valid(sflow_counter)
-    pif_expression__condition_6_register_0 = PIF_PARREP_sflow_counter_VALID(prdata);
-    }
-
-    if (pif_expression__condition_6_register_0)
-        return PIF_CTLFLOW_STATE_egress_flow__condition_7;
-    else
-        return PIF_CTLFLOW_STATE_egress_flow__condition_8;
-}
-
 /* Control flow entry point */
 
 int pif_ctlflow_egress_flow(int *start_state, __lmem uint32_t *_pif_parrep, __mem __addr40 uint32_t *actbuf, unsigned int actbuf_off)
 {
     __gpr int actlen, totlen = 0;
     __gpr int ret;
-    int pif_ctlflow_state_egress_flow = PIF_CTLFLOW_STATE_egress_flow__condition_6;
+    int pif_ctlflow_state_egress_flow = PIF_CTLFLOW_STATE_egress_flow__condition_7;
 
     while (pif_ctlflow_state_egress_flow != PIF_CTLFLOW_STATE_egress_flow_DONE) {
         PIF_DEBUG_SET_STATE(PIF_DEBUG_STATE_CONTROL, ((1 << 16) + pif_ctlflow_state_egress_flow));
@@ -689,21 +743,21 @@ int pif_ctlflow_egress_flow(int *start_state, __lmem uint32_t *_pif_parrep, __me
         case PIF_CTLFLOW_STATE_egress_flow__condition_8:
             pif_ctlflow_state_egress_flow = handle_egress_flow__condition_8(_pif_parrep);
             continue;
-        case PIF_CTLFLOW_STATE_egress_flow__condition_9:
-            pif_ctlflow_state_egress_flow = handle_egress_flow__condition_9(_pif_parrep);
+        case PIF_CTLFLOW_STATE_egress_flow__condition_10:
+            pif_ctlflow_state_egress_flow = handle_egress_flow__condition_10(_pif_parrep);
             continue;
-        case PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate:
-            ret = handle_egress_flow_t_do_frecirculate(_pif_parrep, actbuf, actbuf_off + totlen, (int *)&actlen, (int *)&pif_ctlflow_state_egress_flow);
-            break;
         case PIF_CTLFLOW_STATE_egress_flow__condition_7:
             pif_ctlflow_state_egress_flow = handle_egress_flow__condition_7(_pif_parrep);
+            continue;
+        case PIF_CTLFLOW_STATE_egress_flow__condition_9:
+            pif_ctlflow_state_egress_flow = handle_egress_flow__condition_9(_pif_parrep);
             continue;
         case PIF_CTLFLOW_STATE_egress_flow_t_do_recirculate:
             ret = handle_egress_flow_t_do_recirculate(_pif_parrep, actbuf, actbuf_off + totlen, (int *)&actlen, (int *)&pif_ctlflow_state_egress_flow);
             break;
-        case PIF_CTLFLOW_STATE_egress_flow__condition_6:
-            pif_ctlflow_state_egress_flow = handle_egress_flow__condition_6(_pif_parrep);
-            continue;
+        case PIF_CTLFLOW_STATE_egress_flow_t_do_frecirculate:
+            ret = handle_egress_flow_t_do_frecirculate(_pif_parrep, actbuf, actbuf_off + totlen, (int *)&actlen, (int *)&pif_ctlflow_state_egress_flow);
+            break;
         }
         if (actlen < 0) /* error! */
             return actlen & ((~(1 << PIF_LOOKUP_ERROR_BIT)));

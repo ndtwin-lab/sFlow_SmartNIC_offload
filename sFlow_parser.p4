@@ -1,11 +1,13 @@
+// TODO : complete the recorder.
+// TODO : counter sample is independent. And one packet may contain multi counter sample.
+
 #define ETHERTYPE_IPV4 0x0800
 #define ETHERTYPE_ARP 0x0806
 #define SFLOW_UDP_PORT 6343
 #define IPPROTO_UDP 17
 #define IPPROTO_TCP 6
-
-#define HASH_SIZE 10
-#define HASH_SIZE2 10
+#define BAN_1 67
+#define BAN_2 68
 
 /*===========================================================*/
 /*======================= Header Part =======================*/
@@ -359,6 +361,14 @@ header_type num_metadata_t
     }
 }
 
+// header_type hash_index_t
+// {
+//     fields
+//     {
+//     val:
+//         32;
+//     }
+// }
 
 header_type recirculate_fl_t{
     fields{
@@ -394,6 +404,95 @@ field_list parse_next{
 }
 
 
+// field_list five_tuple
+// {
+//     sflow_sample.srcIP;
+//     sflow_sample.dstIP;
+//     sflow_sample.protocol;
+//     sflow_sample.srcPort;
+//     sflow_sample.dstPort;
+//     sflow_header.agent_ip;
+//     sflow_sample.in_port;
+//     sflow_sample.out_port;
+// }
+
+// field_list five_tuple2
+// {
+//     sflow_sample2.srcIP;
+//     sflow_sample2.dstIP;
+//     sflow_sample2.protocol;
+//     sflow_sample2.srcPort;
+//     sflow_sample2.dstPort;
+//     sflow_header.agent_ip;
+//     sflow_sample2.in_port;
+//     sflow_sample2.out_port;
+// }
+
+
+
+// field_list counter_tuple
+// {
+//     sflow_header.agent_ip;
+//     sflow_counter.g_if;
+// }
+
+// field_list counter_tuple2
+// {
+//     sflow_header.agent_ip;
+//     sflow_counter2.g_if;
+// }
+
+// field_list_calculation five_tuple_hash
+// {
+//     input
+//     {
+//         five_tuple;
+//     }
+// algorithm:
+//     crc32;
+// output_width:
+//     32;
+// }
+
+// field_list_calculation five_tuple2_hash
+// {
+//     input
+//     {
+//         five_tuple2;
+//     }
+// algorithm:
+//     crc32;
+// output_width:
+//     32;
+// }
+
+
+
+// field_list_calculation counter_tuple_hash
+// {
+//     input
+//     {
+//         counter_tuple;
+//     }
+// algorithm:
+//     crc32;
+// output_width:
+//     32;
+// }
+
+// field_list_calculation counter_tuple2_hash
+// {
+//     input
+//     {
+//         counter_tuple2;
+//     }
+// algorithm:
+//     crc32;
+// output_width:
+//     32;
+// }
+
+//@pragma netro reglocked reg_frame_length
 @pragma netro no_lookup_caching
 
 
@@ -739,6 +838,7 @@ control ingress
                 apply(no_record_flow2);
             }
         }
+    }else if(valid(udp) and (udp.dport == BAN_1 or udp.dport == BAN_2)){
     }
     else
     {
