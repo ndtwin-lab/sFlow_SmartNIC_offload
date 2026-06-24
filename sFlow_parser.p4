@@ -818,7 +818,7 @@ table t_do_frecirculate{
 
 control ingress
 {
-
+    
     if (valid(udp) and udp.dport == SFLOW_UDP_PORT)
     {
         if (valid(sflow_counter))
@@ -842,7 +842,7 @@ control ingress
     }
     else
     {
-        apply(nor_tbl);
+       apply(nor_tbl);
     }
 }
 

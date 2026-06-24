@@ -33,10 +33,58 @@ struct counter_data
 
 volatile __export __emem uint32_t cglobal_semaphores[HASH_SIZE2];
 __export __emem __align256 struct counter_data _counter_data[HASH_SIZE2];
+volatile __export __emem uint32_t cglobal_semaphores_dup[HASH_SIZE2];
+__export __emem __align256 struct counter_data _counter_data_dup[HASH_SIZE2];
+extern __export __emem uint32_t _cur_state;
+extern __export __emem uint32_t _processing_me[2];
 
-void cwrite_data_to_mem(uint32_t *index, __mem struct counter_data *counter)
+static __intrinsic uint32_t cread_storage_state(void)
 {
-    __mem __addr40 uint32_t *_pif_hdrptr = (__mem __addr40 uint32_t *)&(_counter_data[*index]);
+    __xread uint32_t state_xfer;
+
+    mem_read_atomic(&state_xfer, (__mem __addr40 uint32_t *)&_cur_state, sizeof(state_xfer));
+    return state_xfer & 1;
+}
+
+static __intrinsic void cprocessing_me_enter(uint32_t state)
+{
+    __xwrite uint32_t one = 1;
+
+    mem_add32(&one, (__mem __addr40 uint32_t *)&_processing_me[state & 1], sizeof(one));
+}
+
+static __intrinsic void cprocessing_me_leave(uint32_t state)
+{
+    __xwrite uint32_t one = 1;
+
+    mem_sub32(&one, (__mem __addr40 uint32_t *)&_processing_me[state & 1], sizeof(one));
+}
+
+static __intrinsic uint32_t cacquire_storage_state(void)
+{
+    uint32_t state_tmp;
+
+    while (1)
+    {
+        state_tmp = cread_storage_state();
+        cprocessing_me_enter(state_tmp);
+
+        if (cread_storage_state() == state_tmp)
+        {
+            return state_tmp;
+        }
+
+        cprocessing_me_leave(state_tmp);
+    }
+}
+
+void cwrite_data_to_mem(uint32_t *index, __mem struct counter_data *counter,
+                        uint32_t state)
+{
+    __mem __addr40 uint32_t *_pif_hdrptr =
+        ((state & 1) == 0) ?
+        (__mem __addr40 uint32_t *)&(_counter_data[*index]) :
+        (__mem __addr40 uint32_t *)&(_counter_data_dup[*index]);
 
     {
         __xwrite struct counter_data _pif_wreg = *counter;
@@ -44,11 +92,15 @@ void cwrite_data_to_mem(uint32_t *index, __mem struct counter_data *counter)
     }
 }
 
-uint8_t cread_and_check(uint32_t *index, __mem struct counter_data *counter)
+uint8_t cread_and_check(uint32_t *index, __mem struct counter_data *counter,
+                        uint32_t state)
 {
     __lmem struct counter_data old_counter;
     __xread struct counter_data key;
-    __mem __addr40 uint32_t *_pif_hdrptr = (__mem __addr40 uint32_t *)&(_counter_data[*index]);
+    __mem __addr40 uint32_t *_pif_hdrptr =
+        ((state & 1) == 0) ?
+        (__mem __addr40 uint32_t *)&(_counter_data[*index]) :
+        (__mem __addr40 uint32_t *)&(_counter_data_dup[*index]);
     
     mem_read_atomic(&key, _pif_hdrptr, sizeof(struct counter_data));
 
@@ -76,55 +128,46 @@ void cstoring_data(uint32_t *_pif_index, __mem struct counter_data *counter)
 {
     __mem __addr40 uint32_t *_pif_hdrptr;
     __xrw uint32_t xfer;
+    uint32_t state_tmp = cacquire_storage_state();
     uint16_t cnt = 0;
+
     while (1)
     {
         xfer = WRITTEN_STATE;
-        _pif_hdrptr = (__mem __addr40 uint32_t *)&cglobal_semaphores[*_pif_index];
+        _pif_hdrptr = (state_tmp == 0) ?
+            (__mem __addr40 uint32_t *)&cglobal_semaphores[*_pif_index] :
+            (__mem __addr40 uint32_t *)&cglobal_semaphores_dup[*_pif_index];
         mem_test_set(&xfer, _pif_hdrptr, sizeof(xfer));
         if (xfer == NO_ONE_STATE)
         { // no one occupy this slot, can write data.
             // write data.
-            cwrite_data_to_mem(_pif_index, counter);
+            cwrite_data_to_mem(_pif_index, counter, state_tmp);
             // exit.
             xfer = FINISH_STATE;
             mem_test_set(&xfer, _pif_hdrptr, sizeof(xfer)); // set to finish state, so that other can read the data and know that the data is ready.
+            cprocessing_me_leave(state_tmp);
             break;
         }
         else if ((xfer & WRITTEN_STATE) == WRITTEN_STATE && (xfer & FINISH_STATE) == 0 )
         { // other is writting this slot.
             sleep(50);
-            // read the data and check if it is the same flow, if it is the same flow, then update the data, otherwise, increase the _pif_index and try again.
-            // for optimization, this condition only need to sleep.
-            if (cread_and_check(_pif_index, counter))
-            {
-                cwrite_data_to_mem(_pif_index, counter);
-                break;
-            }
-            else
-            {
-                // do linear probing.
-                ccollision_handler(_pif_index);
-            }
+            continue;
         }
-        else if ((xfer & FINISH_STATE) == FINISH_STATE )
-        { // other is reading this slot, can not write data, but can wait for a while and try again.
-            if (cread_and_check(_pif_index, counter))
-            {
-                cwrite_data_to_mem(_pif_index, counter);
-                break;
-            }
-            else
-            {
-                // do linear probing.
-                ccollision_handler(_pif_index);
-            }
-        }else{
+        if (cread_and_check(_pif_index, counter, state_tmp))
+        {
+            cwrite_data_to_mem(_pif_index, counter, state_tmp);
+            cprocessing_me_leave(state_tmp);
             break;
+        }
+        else
+        {
+            // do linear probing.
+            ccollision_handler(_pif_index);
         }
         cnt += 1;
         if (cnt > HASH_SIZE2)
         {
+            cprocessing_me_leave(state_tmp);
             break;
         }
     }
